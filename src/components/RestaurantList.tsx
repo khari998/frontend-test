@@ -1,9 +1,10 @@
-import React, { Fragment } from 'react'
+import React from 'react'
+import RestaurantItem from './RestaurantItem'
 
 export default function RestaurantList() {
   return (
-    <Fragment>
-      
-    </Fragment>
+    <div>
+      <RestaurantItem/>
+    </div>
   )
 }

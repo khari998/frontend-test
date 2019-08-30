@@ -2,6 +2,17 @@ export enum Cost {
   $, $$, $$$, $$$$
 }
 
+export const Categories: Array<string> = [
+  'Italian', 'Seafood', 'Steakhouses', 'Japanese', 'American', 'Mexican', 'Thai',
+]
+
+export interface Review {
+  name: string,
+  date: string,
+  rating: number,
+  review: string,
+}
+
 export interface Restaurant {
   title: string,
   category: string,
@@ -11,9 +22,4 @@ export interface Restaurant {
   reviews: Review[], // An array of Review Interfaces
 }
 
-export interface Review {
-  name: string,
-  date: string,
-  rating: number,
-  review: string,
-}
+

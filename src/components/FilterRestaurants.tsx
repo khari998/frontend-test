@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react'
+import React from 'react'
+import { Fragment } from 'react'
 
 export default function FilterRestaurants() {
   return (
