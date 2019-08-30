@@ -1,10 +1,16 @@
 const path = require('path');
 
-const rules = [{
-  test: /\.tsx?/, // handle all tsx files
-  exclude: /node_modules/, // do not read files from node_modules
-  loader: 'babel-loader' // handle tsx files with babel-loader
-}];
+const rules = [
+  {
+    test: /\.tsx?/, // handle all tsx files
+    exclude: /node_modules/, // do not read files from node_modules
+    loader: "babel-loader",
+    options: {
+      presets: ["@babel/preset-env"],
+      plugins: ["@babel/plugin-transform-runtime"]
+    } // handle tsx files with babel-loader
+  }
+];
 
 module.exports = {
   target: "web",
