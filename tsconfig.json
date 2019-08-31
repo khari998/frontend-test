@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "outDir": "build/dist/",
+    "outDir": "./build/",
     "noImplicitAny": true,
     "target": "es5",
     "allowJs": true,
     "jsx": "react",
-    "esModuleInterop": true,
+    "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -23,14 +23,14 @@
     ],
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    "module": "commonjs",
     "noEmit": true
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
+    "./src"
   ],
   "exclude": [
-    "node_modues"
+    "node_modues",
+    "build"
   ]
 }
