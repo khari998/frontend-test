@@ -1,0 +1,29 @@
+Completed 
+  Installed necessary dependencies for typescript/react/webpack to render compiled code to page 
+  Create models to represent data received from API
+  Create dummy data from models to render
+  Render dummy data to page
+
+Todo
+  Make basic filtering drop down menu
+  Format RestaurantItem
+  Make Restaurants populate in a grid for RestaurantList
+  Connect state with Redux
+  Make stateful filtering functional
+  Manage any additional state
+  Setup Router to reviews page
+  Setup reviews page
+  Make GraphQL/Apollo server
+  Pull data from Yelp API and send to client
+  Add map to reviews page
+  Add serverside search feature
+  Styling -- SASS available
+  Heroku Deploy
+  Unit Tests
+  More Tests - Use Storybook https://storybook.js.org/
+  Documentation -- Include Conclusion with optimizations
+
+Extra
+  Flutter native mobile version
+  Persist data to backend (favorite restaurants)
+  More Styling -- add Animations
