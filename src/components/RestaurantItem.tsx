@@ -1,21 +1,29 @@
 import * as React from 'react'
+import { exRestaurants } from '../models/testdata'
+
+let R = exRestaurants[0];
 
 export default function RestaurantItem() {
   return (
     <div>
-      <div>
-        {"Image goes here"}
+      <div className="image">
+        <img src={R.img}/>
       </div>
-      <div>
-        {"Title goes here"}
+      <div className="title">
+        {R.title}
       </div>
-      <div>
-        {"Rating goes here"}
+      <div className="rating">
+        {R.avg_rating}
       </div>
-      <div>
-        {"$$$ and open/close goes here"}
+      <div className="details">
+        <div>
+          {`${R.category} · ${R.cost}`}
+        </div>
+        <div>
+          { R.isOpen ? 'OPEN NOW' : 'CLOSED' }
+        </div>
       </div>
-      <div>
+      <div className="button">
         <button onClick={() => {}}> Learn More </button>
       </div>
     </div>

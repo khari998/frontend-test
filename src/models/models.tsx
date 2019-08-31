@@ -36,26 +36,29 @@ export class Restaurant { // class model for Restaurants
   resId: string;
   title: string;
   category: string;
-  open: boolean;
+  isOpen: boolean;
   cost: string;
   avg_rating: number;
   reviews: Review[]; // instantiated with an array of Review classes
+  img: string;
 
   constructor(
     resId: string,
     title: string,
     category: string,
-    open: boolean,
+    isOpen: boolean,
     cost: string,
     avg_rating: number,
     reviews: Review[],
+    img: string,
   ) {
     this.resId = resId;
     this.title = title;
     this.category = category;
-    this.open = open;
+    this.isOpen = isOpen;
     this.cost = cost;
     this.avg_rating = avg_rating;
     this.reviews = reviews;
+    this.img = img;
   }
 }

@@ -1,5 +1,18 @@
 import { Restaurant, Review, Cost, Categories } from './models';
 
+const imgs = {
+  panda: 'https://d38trduahtodj3.cloudfront.net/images.ashx?t=ig&rid=VisitHenrico&i=panda_express.png&w=330&h=330&cropbox=1&cropboxhpos=center&stf=1',
+  car: 'https://vectorlogoseek.com/wp-content/uploads/2018/09/carrabbas-italian-grill-vector-logo.png',
+  cope: 'https://copelandsofneworleans.com/wp-content/uploads/2018/07/CNO-Red-TAGLINE.png',
+  dragos: 'https://dragosrestaurant.com/wp-content/uploads/2018/01/dragos-image-logo.png',
+  redL: 'https://upload.wikimedia.org/wikipedia/en/b/b1/Redlobster_logocopia.png',
+  outb: 'https://ncccc.org/wp-content/uploads/2018/09/Outback-Steakhouse-logo.png',
+  mcDon: 'https://news.mcdonalds.com/system/files-encrypted/styles/nir_media_item_grid_thumbnail/encrypt/nasdaq_kms/media_gallery/thumbnail/2019-04/The%20Token.png?itok=yRL6WXDB',
+  fel: 'https://baltimorefishbowl.com/wp-content/uploads/2019/01/Felipes-logo-e1546464726282.jpg',
+  chi: 'https://www.nrn.com/sites/nrn.com/files/uploads/2016/04/chipotlelogopromo_0.jpg',
+  pho: 'https://www.menusie.com/uploads/5/2/9/9/52994693/pho-bistro-banner_orig.png',
+};
+
 const sampleReview = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
 ut labore et dolore magna aliqua. Turpis tincidunt id aliquet risus feugiat in ante metus dictum. 
 Suspendisse ultrices gravida dictum fusce. Aliquet nec ullamcorper sit amet risus. At consectetur lorem donec 
@@ -12,7 +25,7 @@ tortor aliquam nulla. Amet cursus sit amet dictum sit amet. Nisi porta lorem mol
 quis enim lobortis scelerisque fermentum dui. Ipsum dolor sit amet consectetur adipiscing elit ut. Tellus molestie 
 nunc non blandit massa enim nec. Et malesuada fames ac turpis egestas maecenas.`
 
-const karReviews = [
+const carReviews = [
   new Review('111', '1', 'Jon', '08/31/2019', 4, sampleReview),
   new Review('112', '1', 'Sarah', '08/31/2019', 5, sampleReview),
   new Review('113', '1', 'Imani', '08/31/2019', 4, sampleReview),
@@ -84,14 +97,14 @@ const phoReviews = [
 
 
 export const exRestaurants = [
-  new Restaurant('1', 'Karrabas', Categories[0], true, Cost[2], 4, karReviews),
-  new Restaurant('2', 'Copelands', Categories[0], true, Cost[3], 4, copeReviews),
-  new Restaurant('3', 'Dragos', Categories[1], true, Cost[3], 4, dragReviews),
-  new Restaurant('4', 'Red Lobster', Categories[1], true, Cost[2], 4, redReviews),
-  new Restaurant('5', 'Outback', Categories[2], true, Cost[3], 4, outReviews),
-  new Restaurant('6', 'Panda Express', Categories[3], true, Cost[0], 4, pandaReviews),
-  new Restaurant('7', 'McDonalds', Categories[4], true, Cost[0], 4, mcReviews),
-  new Restaurant('8', 'Felipe\'s', Categories[5], true, Cost[1], 4, felReviews),
-  new Restaurant('9', 'Chipotle', Categories[5], true, Cost[1], 4, chiReviews),
-  new Restaurant('10', 'Pho Bistro', Categories[6], true, Cost[2], 4, phoReviews),
+  new Restaurant('1', 'Carrabas', Categories[0], true, Cost[2], 4, carReviews, imgs.car),
+  new Restaurant('2', 'Copelands', Categories[0], true, Cost[3], 4, copeReviews, imgs.cope),
+  new Restaurant('3', 'Dragos', Categories[1], true, Cost[3], 4, dragReviews, imgs.dragos),
+  new Restaurant('4', 'Red Lobster', Categories[1], true, Cost[2], 4, redReviews, imgs.redL),
+  new Restaurant('5', 'Outback', Categories[2], true, Cost[3], 4, outReviews, imgs.outb),
+  new Restaurant('6', 'Panda Express', Categories[3], true, Cost[0], 4, pandaReviews, imgs.panda),
+  new Restaurant('7', 'McDonalds', Categories[4], true, Cost[0], 4, mcReviews, imgs.mcDon),
+  new Restaurant('8', 'Felipe\'s', Categories[5], true, Cost[1], 4, felReviews, imgs.fel),
+  new Restaurant('9', 'Chipotle', Categories[5], true, Cost[1], 4, chiReviews, imgs.chi),
+  new Restaurant('10', 'Pho Bistro', Categories[6], true, Cost[2], 4, phoReviews, imgs.pho),
 ];
