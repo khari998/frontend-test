@@ -62,40 +62,35 @@ img {
   flex-direction: column;
   overflow: hidden;
 }
-.card:hover .card-image {
-  -webkit-filter: contrast(100%);
-          filter: contrast(100%);
-}
+
 .card-content {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
   padding: 1rem;
 }
-.card-image {
+.card-media {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  -webkit-filter: contrast(70%);
-          filter: contrast(70%);
+
   overflow: hidden;
   position: relative;
-  transition: -webkit-filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
-  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
-  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91), -webkit-filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+  min-width: 20rem;
+  min-height: 10rem;
+  max-width: 160rem;
+  max-height: 90rem;
+
 }
-.card-image::before {
+.card-media::before {
   content: "";
-  display: block;
-  padding-top: 56.25%;
+  display: flex;
+
 }
-@media (min-width: 40rem) {
-  .card-image::before {
-    padding-top: 66.6%;
-  }
-}
+
 
 .card-title {
   font-size: 1.25rem;
@@ -118,8 +113,31 @@ img {
   grid-area: right;
 }
 
-.container {
+.text-container {
   display: grid;
   grid-template-columns: 40% auto 40%;
   grid-template-areas: "left center right"
 }
+
+.dd-container {
+  display: grid;
+  grid-template-columns: 10% 12% 10% 10% auto 10%;
+  grid-template-areas: "filter open dd1 dd2 space button"
+}
+
+.dd-filter {
+  grid-area: filter;
+}
+.dd-open {
+  grid-area: open;
+}
+.dd-dd1 {
+  grid-area: dd1;
+}
+.dd-dd2 {
+  grid-area: dd2;
+}
+.dd-button {
+  grid-area: button;
+}
+

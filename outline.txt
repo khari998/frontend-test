@@ -6,10 +6,9 @@ Completed
   Make basic filtering drop down menu
   Format RestaurantItem
   Make Restaurants populate in a grid for RestaurantList
+  Format Filtering
 
 Todo
-
-  Format Filtering
   Connect state with Redux
   Make stateful filtering functional
   Manage any additional state

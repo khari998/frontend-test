@@ -7,7 +7,6 @@ interface rListItemProps {
   R: Restaurant,
 }
 
-
 export default function RestaurantItem({ R }: rListItemProps) {
 
   // Builds array of star icons according to rating
@@ -34,14 +33,15 @@ export default function RestaurantItem({ R }: rListItemProps) {
         </div>
 
         <div className="card-content">
-          <div className="card-title">{R.title}</div>
+          
+          <div className="card-title">{ R.title }</div>
 
           <div className="rating">
             { starArr }
           </div>
 
           <div className="card-text">
-            <div className="container">
+            <div className="text-container">
               <div className="meta-left">
                 {`${R.category} · ${R.cost}`}
               </div>
@@ -55,7 +55,6 @@ export default function RestaurantItem({ R }: rListItemProps) {
           <button className="btn btn-block" onClick={() => {}}> LEARN MORE </button>
         
         </div>
-
       </div>
     </li>
   )
