@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface ddProps {
   ddList: string[],
@@ -7,23 +8,29 @@ interface ddProps {
 }
 
 export default function Dropdown({ ddList, ddHeader } : ddProps) {
+  const ddOpen = true;
   return (
     <div>
       <div className="dd-wrapper">
-
         <div className="dd-header" onClick={() => { }}>
           <div className="dd-header-title">{ddHeader}</div>
+          {
+            ddOpen ? <FontAwesomeIcon icon="angle-up"/> : <FontAwesomeIcon icon="angle-down"/>
+          }
         </div>
 
-        <ul className="dd-list">
-          {
-            ddList.map((listItem: string, keyInd: number) => (
-              <li className="dd-list-item" key={keyInd}>{listItem}</li>
+        { 
+          ddOpen &&
+          <ul className="dd-list">
+            {
+              ddList.map((listItem: string, keyInd: number) => (
+                  <li className="dd-list-item" key={keyInd}>{listItem}</li>
+                )
               )
-            )
-          }
-        </ul>
-        
+            }
+          </ul>
+        }
+
       </div>
     </div>
   )

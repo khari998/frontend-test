@@ -1,6 +1,11 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { Fragment } from 'react'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fab, faAngleUp, faAngleDown)
 
 import FilterRestaurants from './components/FilterRestaurants';
 import RestaurantList from './components/RestaurantList';
