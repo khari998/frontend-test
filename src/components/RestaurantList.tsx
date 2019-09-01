@@ -1,10 +1,15 @@
 import * as React from 'react'
 import RestaurantItem from './RestaurantItem'
+import { Restaurant } from '../models/models'
 
-export default function RestaurantList() {
+interface rListProps {
+  rList: Restaurant[],
+}
+
+export default function RestaurantList({ rList } : rListProps) {
   return (
     <ul className="restaurants">
-      <RestaurantItem/>
+      { rList.map((restaurant) => <RestaurantItem R={restaurant}/>) }
     </ul>
   )
 }

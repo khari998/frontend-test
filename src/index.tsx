@@ -10,6 +10,7 @@ library.add(fab, faAngleUp, faAngleDown, faStar, faStarHalfAlt, farStar, faCircl
 
 import FilterRestaurants from './components/FilterRestaurants';
 import RestaurantList from './components/RestaurantList';
+import { exRestaurants } from './models/testdata'
 import { Restaurant, Review, Cost, Categories }  from './models/models';
 
 
@@ -20,7 +21,7 @@ export default function App(): JSX.Element {
       <h1>Restaurants</h1>
       <p>Browse through a curated list of your favorite restaurants</p>
       <FilterRestaurants/>
-      <RestaurantList/>
+      <RestaurantList rList={exRestaurants}/>
     </Fragment>
   )
 }

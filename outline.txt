@@ -4,13 +4,16 @@ Completed
   Create dummy data from models to render
   Render dummy data to page
   Make basic filtering drop down menu
-
-Todo
   Format RestaurantItem
   Make Restaurants populate in a grid for RestaurantList
+
+Todo
+
+  Format Filtering
   Connect state with Redux
   Make stateful filtering functional
   Manage any additional state
+    Load more under the grid needs to produce more restaurants when clicked
   Setup Router to reviews page
   Setup reviews page
   Make GraphQL/Apollo server
@@ -18,6 +21,7 @@ Todo
   Add map to reviews page
   Add serverside search feature
   Styling -- SASS available
+    Fix image width && height
   Heroku Deploy
   Unit Tests
   More Tests - Use Storybook https://storybook.js.org/

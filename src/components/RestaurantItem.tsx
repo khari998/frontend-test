@@ -1,10 +1,14 @@
 import * as React from 'react'
 import { exRestaurants } from '../models/testdata'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Restaurant } from '../models/models'
 
-let R = exRestaurants[0];
+interface rListItemProps {
+  R: Restaurant,
+}
 
-export default function RestaurantItem() {
+
+export default function RestaurantItem({ R }: rListItemProps) {
 
   // Builds array of star icons according to rating
   const starArr: any = [];
