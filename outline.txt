@@ -3,9 +3,9 @@ Completed
   Create models to represent data received from API
   Create dummy data from models to render
   Render dummy data to page
+  Make basic filtering drop down menu
 
 Todo
-  Make basic filtering drop down menu
   Format RestaurantItem
   Make Restaurants populate in a grid for RestaurantList
   Connect state with Redux

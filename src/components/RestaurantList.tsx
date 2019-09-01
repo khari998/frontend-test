@@ -3,8 +3,8 @@ import RestaurantItem from './RestaurantItem'
 
 export default function RestaurantList() {
   return (
-    <div>
+    <ul className="restaurants">
       <RestaurantItem/>
-    </div>
+    </ul>
   )
 }
