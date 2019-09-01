@@ -13,7 +13,7 @@ export default function App(): JSX.Element {
     <Fragment>
       <h1>Restaurants</h1>
       <p>Browse through a curated list of your favorite restaurants</p>
-      {/* <FilterRestaurants/> */}
+      <FilterRestaurants/>
       <RestaurantList/>
     </Fragment>
   )

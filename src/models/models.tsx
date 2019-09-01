@@ -1,6 +1,6 @@
-export enum Cost { // Stores cost range values as strings
-  $, $$, $$$, $$$$
-}
+export const Cost: Array<string> = [
+  '$', '$$', '$$$', '$$$$',
+]
 
 export const Categories: Array<string> = [ // Food Categories
   'Italian', 'Seafood', 'Steakhouses', 'Japanese', 'American', 'Mexican', 'Thai',
