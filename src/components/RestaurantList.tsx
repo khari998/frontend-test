@@ -9,7 +9,7 @@ interface rListProps {
 export default function RestaurantList({ rList } : rListProps) {
   return (
     <ul className="restaurants">
-      { rList.map((restaurant) => <RestaurantItem R={restaurant}/>) }
+      { rList.map((restaurant, ind) => <RestaurantItem R={restaurant} key={restaurant.resId}/>) }
     </ul>
   )
 }

@@ -7,13 +7,13 @@ Completed
   Format RestaurantItem
   Make Restaurants populate in a grid for RestaurantList
   Format Filtering
+  Connect state with Redux
 
 Todo
-  Connect state with Redux
   Make stateful filtering functional
   Manage any additional state
     Load more under the grid needs to produce more restaurants when clicked
-  Setup Router to reviews page
+  Setup Router to reviews page 
   Setup reviews page
   Make GraphQL/Apollo server
   Pull data from Yelp API and send to client
@@ -24,6 +24,7 @@ Todo
   Heroku Deploy
   Unit Tests
   More Tests - Use Storybook https://storybook.js.org/
+    Change all divs to Fragments for more performance
   Documentation -- Include Conclusion with optimizations
 
 Extra

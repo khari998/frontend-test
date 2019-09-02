@@ -10,7 +10,7 @@ interface rListItemProps {
 export default function RestaurantItem({ R }: rListItemProps) {
 
   // Builds array of star icons according to rating
-  const starArr: any = [];
+  const starArr: any = []; // Assigned to type any due to issue with FontAwesomeIcon type
   let count: number = R.avg_rating; // Temporary store for rating
   for (let i = 0; i < 5; i++) { // Always gives 5 stars, uses i for unique key
     if (count >= 1) { // Logic for full stars
