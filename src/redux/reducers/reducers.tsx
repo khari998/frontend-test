@@ -1,4 +1,4 @@
-import { Restaurant } from '../../models/models';
+import { Restaurant, DdItem } from '../../models/models';
 
 /** 
  * Reducers for redux store 
@@ -13,6 +13,26 @@ export const restaurantsReducer = (state: Restaurant[] = [], action: any) => {
       return state;
   }
 };
+
+export const ddItemPriceReducer = (state: DdItem[] = [], action: any) => {
+  switch(action.type) {
+    case "TOGGLEPRICESELECT":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+export const ddItemCatReducer = (state: DdItem[] = [], action: any) => {
+  switch(action.type) {
+    case "TOGGLECATSELECT":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+
 
 export const openFilterReducer = (state = false, action: any) => {
   switch (action.type) {

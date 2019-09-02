@@ -11,7 +11,15 @@ library.add(fab, faAngleUp, faAngleDown, faStar, faStarHalfAlt, farStar, faCircl
 
 import App from './components/App'
 import { exRestaurants } from './models/testdata'
-import { restaurantsReducer, openFilterReducer, priceFilterReducer, catFilterReducer } from './redux/reducers/reducers'
+import { categoriesArr, costArr } from './models/ddData'
+import { 
+  restaurantsReducer, 
+  openFilterReducer, 
+  priceFilterReducer, 
+  catFilterReducer,
+  ddItemPriceReducer,
+  ddItemCatReducer,
+} from './redux/reducers/reducers'
 
 
 const allReducers = combineReducers({ // combines state from multiple reducers
@@ -19,12 +27,16 @@ const allReducers = combineReducers({ // combines state from multiple reducers
   openFilter: openFilterReducer,
   priceFilter: priceFilterReducer,
   catFilter: catFilterReducer,
+  ddPrices: ddItemPriceReducer,
+  ddCats: ddItemCatReducer
 })
 
 const store = createStore(
   allReducers, // passing combined reducers to store as state
   { // pass default state for the store dictated by reducers as second argument
-    restaurants: exRestaurants, // set example data as default state for development
+    restaurants: exRestaurants, // set example restaurant data as default state for development
+    ddPrices: costArr, // set array of cost range as default state
+    ddCats: categoriesArr, // set array of categories as default state
   },
 );
 

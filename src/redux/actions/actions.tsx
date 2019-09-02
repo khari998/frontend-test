@@ -1,4 +1,4 @@
-import { Restaurant } from '../../models/models';
+import { Restaurant, DdItem  } from '../../models/models';
 
 /**
  * Actions for redux reducers
@@ -8,6 +8,16 @@ import { Restaurant } from '../../models/models';
 export const updateRestaurants = (restArr: Restaurant[]) => ({
   type: 'UPDATEREST',
   payload: restArr,
+})
+
+export const priceItemToggle = (priceArr: DdItem[]) => ({
+  type: 'TOGGLEPRICESELECT',
+  payload: priceArr,
+})
+
+export const catItemToggle = (catArr: DdItem[]) => ({
+  type: 'TOGGLECATSELECT',
+  payload: catArr,
 })
 
 export const isOpenToggle = () => ({

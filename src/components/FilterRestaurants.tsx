@@ -5,13 +5,14 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { isOpenToggle } from '../redux/actions/actions';
 import Dropdown from './Dropdown'
-import { Cost, Categories } from '../models/models'
 
 export default function FilterRestaurants() {
-  // redux hooks that grabs current elements of state within redux store
+  // UseSelector - redux hook that grabs current elements of state within redux store
   const openFilter = useSelector((state: any) => state.openFilter)
   const priceFilter = useSelector((state: any) => state.priceFilter)
   const catFilter = useSelector((state: any) => state.catFilter)
+  const ddCats = useSelector((state: any) => state.ddCats)
+  const ddPrices = useSelector((state: any) => state.ddPrices)
 
   const dispatch = useDispatch(); // redux hook that allows actions to be dispatched
 
@@ -28,19 +29,24 @@ export default function FilterRestaurants() {
         </div>
 
         <div className="dd-open" onClick={toggleOpen}>
-          { openFilter ? <FontAwesomeIcon icon={['far', 'dot-circle']} />  : <FontAwesomeIcon icon={['far', 'circle']} /> }
+          { openFilter ? <FontAwesomeIcon icon={['far', 'dot-circle']} /> : <FontAwesomeIcon icon={['far', 'circle']} /> }
           {'  Open Now'}
         </div>
 
         <div className="dd-dd1">
           <Dropdown 
-            ddList={Cost}
+            ddList={ddPrices}
             ddHeader="Price"
-            ddOpen={priceFilter}></Dropdown>
+            ddOpen={priceFilter}
+          ></Dropdown>
         </div>
 
         <div className="dd-dd2">
-          <Dropdown ddList={Categories} ddHeader="Categories" ddOpen={catFilter}></Dropdown>
+          <Dropdown
+            ddList={ddCats}
+            ddHeader="Categories"
+            ddOpen={catFilter}
+          ></Dropdown>
         </div>
 
         <div className="dd-button">

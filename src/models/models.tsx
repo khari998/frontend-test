@@ -1,10 +1,18 @@
-export const Cost: Array<string> = [
-  '$', '$$', '$$$', '$$$$',
-]
-
-export const Categories: Array<string> = [ // Food Categories
-  'Italian', 'Seafood', 'Steakhouses', 'Japanese', 'American', 'Mexican', 'Thai',
-]
+export class DdItem { // class model for Dropdown menu items
+  itemId: string;
+  content: string;
+  selected: boolean;
+  
+  constructor(
+    itemId: string,
+    content: string,
+    selected: boolean,
+  ) {
+    this.itemId = itemId;
+    this.content = content;
+    this.selected = selected;
+  }
+}
 
 export class Review { // class model for Reviews
   revId: string; // Unique review id
@@ -29,7 +37,6 @@ export class Review { // class model for Reviews
     this.rating = rating;
     this.review = review;
   }
-
 }
 
 export class Restaurant { // class model for Restaurants
@@ -39,7 +46,7 @@ export class Restaurant { // class model for Restaurants
   isOpen: boolean;
   cost: string;
   avg_rating: number;
-  reviews: Review[]; // instantiated with an array of Review classes
+  reviews: Review[]; // Instantiated with an array of Review classes
   img: string;
 
   constructor(

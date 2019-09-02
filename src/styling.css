@@ -121,7 +121,7 @@ img {
 
 .dd-container {
   display: grid;
-  grid-template-columns: 10% 12% 10% 10% auto 10%;
+  grid-template-columns: 8% 14% 12% 14% auto 10%;
   grid-template-areas: "filter open dd1 dd2 space button"
 }
 

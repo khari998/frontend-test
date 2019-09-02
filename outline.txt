@@ -17,6 +17,7 @@ Todo
   Setup reviews page
   Make GraphQL/Apollo server
   Pull data from Yelp API and send to client
+    Map over Yelp data and render to page
   Add map to reviews page
   Add serverside search feature
   Styling -- SASS available

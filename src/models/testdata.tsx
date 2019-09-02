@@ -1,4 +1,6 @@
-import { Restaurant, Review, Cost, Categories } from './models';
+import { Restaurant, Review } from './models';
+import { costArr, categoriesArr } from '../models/ddData'
+
 
 const imgs = {
   panda: 'https://d38trduahtodj3.cloudfront.net/images.ashx?t=ig&rid=VisitHenrico&i=panda_express.png&w=330&h=330&cropbox=1&cropboxhpos=center&stf=1',
@@ -97,14 +99,14 @@ const phoReviews = [
 
 
 export const exRestaurants = [
-  new Restaurant('1', 'Carrabas', Categories[0], true, Cost[2], 4, carReviews, imgs.car),
-  new Restaurant('2', 'Copelands', Categories[0], true, Cost[3], 4, copeReviews, imgs.cope),
-  new Restaurant('3', 'Dragos', Categories[1], true, Cost[3], 4, dragReviews, imgs.dragos),
-  new Restaurant('4', 'Red Lobster', Categories[1], true, Cost[2], 4, redReviews, imgs.redL),
-  new Restaurant('5', 'Outback', Categories[2], true, Cost[3], 4, outReviews, imgs.outb),
-  new Restaurant('6', 'Panda Express', Categories[3], true, Cost[0], 4, pandaReviews, imgs.panda),
-  new Restaurant('7', 'McDonalds', Categories[4], true, Cost[0], 4, mcReviews, imgs.mcDon),
-  new Restaurant('8', 'Felipe\'s', Categories[5], true, Cost[1], 4, felReviews, imgs.fel),
-  new Restaurant('9', 'Chipotle', Categories[5], true, Cost[1], 4, chiReviews, imgs.chi),
-  new Restaurant('10', 'Pho Bistro', Categories[6], true, Cost[2], 4, phoReviews, imgs.pho),
+  new Restaurant('1', 'Carrabas', categoriesArr[0].content, true, costArr[2].content, 4, carReviews, imgs.car),
+  new Restaurant('2', 'Copelands', categoriesArr[0].content, true, costArr[3].content, 4, copeReviews, imgs.cope),
+  new Restaurant('3', 'Dragos', categoriesArr[1].content, true, costArr[3].content, 4, dragReviews, imgs.dragos),
+  new Restaurant('4', 'Red Lobster', categoriesArr[1].content, true, costArr[2].content, 4, redReviews, imgs.redL),
+  new Restaurant('5', 'Outback', categoriesArr[2].content, true, costArr[3].content, 4, outReviews, imgs.outb),
+  new Restaurant('6', 'Panda Express', categoriesArr[3].content, true, costArr[0].content, 4, pandaReviews, imgs.panda),
+  new Restaurant('7', 'McDonalds', categoriesArr[4].content, true, costArr[0].content, 4, mcReviews, imgs.mcDon),
+  new Restaurant('8', 'Felipe\'s', categoriesArr[5].content, true, costArr[1].content, 4, felReviews, imgs.fel),
+  new Restaurant('9', 'Chipotle', categoriesArr[5].content, true, costArr[1].content, 4, chiReviews, imgs.chi),
+  new Restaurant('10', 'Pho Bistro', categoriesArr[6].content, true, costArr[2].content, 4, phoReviews, imgs.pho),
 ];
