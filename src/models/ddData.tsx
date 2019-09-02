@@ -1,7 +1,7 @@
 import { DdItem } from '../models/models';
 
 export const costArr: DdItem[] = [ // Default Price Dropdown data
-  new DdItem('0', 'Any', true),
+  new DdItem('0', 'All', true),
   new DdItem('1', '$', false),
   new DdItem('2', '$$', false),
   new DdItem('3', '$$$', false),
@@ -9,7 +9,7 @@ export const costArr: DdItem[] = [ // Default Price Dropdown data
 ]
 
 export const categoriesArr: DdItem[] = [ // Default Categories Dropdown data
-  new DdItem('0', 'Any', true),
+  new DdItem('0', 'All', true),
   new DdItem('1', 'Italian', false),
   new DdItem('2', 'Seafood', false),
   new DdItem('3', 'Steakhouses', false),

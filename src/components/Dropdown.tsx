@@ -26,8 +26,24 @@ export default function Dropdown({ ddList, ddHeader, ddOpen } : ddProps) {
   const selectDdItem = (itemInd: number) => { // Change state to new list of DdItems with clicked item selected property changed to true
     const tempList = [...ddList] // Stores previous values of state in copied list  
     const newItem = tempList[itemInd] // Stores clicked price
-    newItem.selected = !newItem.selected // Changes selected property on price to opposite value boolean
-    tempList[itemInd] = newItem; // Replace old DdItem with updated newItem
+    const allFilter = tempList[0];
+
+    //handle edge cases for "All" filter selected
+    if (itemInd > 0) {
+      newItem.selected = !newItem.selected // Changes selected property on price to opposite value boolean
+      tempList[itemInd] = newItem; // Replace old DdItem with updated newItem
+      allFilter.selected = false; // Set the All filter selected property to false if any other item is selected
+      tempList[0] = allFilter; // Update list with new All filter
+    } else if (itemInd === 0 && !allFilter.selected) {  
+      // If the All filter is slected while currently false, set all other item selected properties to false
+      tempList.forEach((item: DdItem, index: number) => {
+        if (index === 0) {
+          item.selected = true; // Keep All filter true so that it is not turned off when clicked
+        } else {
+          item.selected = false;
+        }
+      })
+    }
 
     // Dispatches actions to redux store based on which Dropdown is selected
     if (ddHeader === "Price") { 
