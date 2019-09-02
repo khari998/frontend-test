@@ -24,6 +24,10 @@ export const isOpenToggle = () => ({
   type: 'OPENFILTER',
 })
 
+export const closeOpenToggle = () => ({
+  type: 'CLOSEOPENFILTER',
+})
+
 export const priceDDToggle = () => ({
   type: 'PRICEFILTER',
 })

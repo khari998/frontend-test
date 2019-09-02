@@ -32,12 +32,12 @@ export const ddItemCatReducer = (state: DdItem[] = [], action: any) => {
   }
 };
 
-
-
 export const openFilterReducer = (state = false, action: any) => {
   switch (action.type) {
     case "OPENFILTER":
       return !state;
+    case "CLOSEOPENFILTER":
+      return false; // So clear all button won't change to true if it is initially false
     default:
       return state;
   }

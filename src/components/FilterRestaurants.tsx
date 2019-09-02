@@ -3,8 +3,9 @@ import { Fragment } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDispatch, useSelector } from 'react-redux';
 
-import { isOpenToggle } from '../redux/actions/actions';
+import { isOpenToggle, closeOpenToggle, priceItemToggle, catItemToggle } from '../redux/actions/actions';
 import Dropdown from './Dropdown'
+import { DdItem } from '../models/models';
 
 export default function FilterRestaurants() {
   // UseSelector - redux hook that grabs current elements of state within redux store
@@ -18,6 +19,26 @@ export default function FilterRestaurants() {
 
   const toggleOpen = () => { // click handler function for toggling open filter
     dispatch(isOpenToggle()) // dispatches isOpenToggle action to redux store
+  } 
+
+
+  const clearAll = () => {
+    
+    // Return new array as state with selected property as false to deselect all categories
+    const clearCats = ddCats.map((item: DdItem) => {
+      item.selected = false;
+      return item;
+    });
+
+    // Return new array as state with selected property as false to deselect all prices
+    const clearPrices = ddPrices.map((item: DdItem) => {
+      item.selected = false;
+      return item;
+    });
+
+    dispatch(closeOpenToggle()) // Sets Open filter to false
+    dispatch(priceItemToggle(clearPrices)) // Pass new array to change state
+    dispatch(catItemToggle(clearCats)) // Pass new array to change state
   }
 
   return (
@@ -50,7 +71,7 @@ export default function FilterRestaurants() {
         </div>
 
         <div className="dd-button">
-          <button className="btn btn-block" onClick={() => { }}> CLEAR ALL </button>
+          <button className="btn btn-block" onClick={clearAll}> CLEAR ALL </button>
         </div>
 
       </div>

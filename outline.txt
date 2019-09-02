@@ -19,7 +19,7 @@ Todo
   Pull data from Yelp API and send to client
     Map over Yelp data and render to page
   Add map to reviews page
-  Add serverside search feature
+  Optimize server side filtering
   Styling -- SASS available
     Fix image width && height
   Heroku Deploy

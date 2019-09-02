@@ -25,8 +25,8 @@ export default function Dropdown({ ddList, ddHeader, ddOpen } : ddProps) {
 
   const selectDdItem = (itemInd: number) => { // Change state to new list of DdItems with clicked item selected property changed to true
     const tempList = [...ddList] // Stores previous values of state in copied list  
-    const newItem = tempList[itemInd] // Stores clicked price
-    const allFilter = tempList[0];
+    const newItem = tempList[itemInd] // Stores clicked item
+    const allFilter = tempList[0]; // Stores All filter to handle edge cases
 
     //handle edge cases for "All" filter selected
     if (itemInd > 0) {
@@ -38,7 +38,7 @@ export default function Dropdown({ ddList, ddHeader, ddOpen } : ddProps) {
       // If the All filter is slected while currently false, set all other item selected properties to false
       tempList.forEach((item: DdItem, index: number) => {
         if (index === 0) {
-          item.selected = true; // Keep All filter true so that it is not turned off when clicked
+          item.selected = true; // Keep All filter true so it can only be made false by clicking another filter
         } else {
           item.selected = false;
         }
