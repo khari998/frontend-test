@@ -20,10 +20,8 @@ export default function FilterRestaurants() {
   const toggleOpen = () => { // click handler function for toggling open filter
     dispatch(isOpenToggle()) // dispatches isOpenToggle action to redux store
   } 
-
-
+  
   const clearAll = () => {
-    
     // Return new array as state with selected property as false to deselect all categories
     const clearCats = ddCats.map((item: DdItem) => {
       item.selected = false;
