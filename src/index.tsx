@@ -19,6 +19,7 @@ import {
   catFilterReducer,
   ddItemPriceReducer,
   ddItemCatReducer,
+  loadMoreReducer
 } from './redux/reducers/reducers'
 
 
@@ -28,7 +29,8 @@ const allReducers = combineReducers({ // combines state from multiple reducers
   priceFilter: priceFilterReducer,
   catFilter: catFilterReducer,
   ddPrices: ddItemPriceReducer,
-  ddCats: ddItemCatReducer
+  ddCats: ddItemCatReducer,
+  maxItems: loadMoreReducer
 })
 
 const store = createStore(

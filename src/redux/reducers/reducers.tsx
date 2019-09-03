@@ -51,10 +51,20 @@ export const priceFilterReducer = (state = false, action: any) => {
       return state;
   }
 }
+
 export const catFilterReducer = (state = false, action: any) => {
   switch (action.type) {
     case "CATFILTER":
       return !state;
+    default:
+      return state;
+  }
+}
+
+export const loadMoreReducer = (state = 8, action: any) => {
+  switch (action.type) {
+    case "UPDATEVISIBLE":
+      return state + action.payload;
     default:
       return state;
   }

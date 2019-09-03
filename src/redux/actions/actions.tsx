@@ -35,3 +35,8 @@ export const priceDDToggle = () => ({
 export const catDDToggle = () => ({
   type: 'CATFILTER',
 })
+
+export const loadMore = () => ({
+  type: 'UPDATEVISIBLE',
+  payload: 8,
+})

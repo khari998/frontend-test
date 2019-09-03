@@ -1,14 +1,19 @@
 import * as React from 'react'
 import RestaurantItem from './RestaurantItem'
 import { Restaurant, DdItem } from '../models/models'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { loadMore } from '../redux/actions/actions';
 
 interface rListProps {
   rList: Restaurant[],
 }
 
 export default function RestaurantList({ rList } : rListProps) {
-  // Redux hook to grab current openFilter boolean from redux store
+  // Redux hook that allows actions to be dispatched
+  const dispatch = useDispatch();
+
+  // Redux hook to grab maxItems and openFilter from redux store
+  const maxItems = useSelector((state: any) => state.maxItems);
   const openFilter = useSelector((state: any) => state.openFilter) 
 
   const catFilterContent = useSelector((state: any) => state.ddCats)
@@ -34,20 +39,30 @@ export default function RestaurantList({ rList } : rListProps) {
     rList = rList.filter((rest: Restaurant) => priceFilterContent.includes(rest.cost));
   }
 
+  const loadAdditionalItems = () => { // Increases maximum items that can be loaded
+    dispatch(loadMore()) // Dispatches loadMore action to increase maxItems
+  }
+
   return (
-    <ul className="restaurants">
-      { 
-        rList.length ? 
-        rList.map((restaurant) => <RestaurantItem R={restaurant} key={restaurant.resId}/>)
-        : <div>
-            <h1>
-              No venues match your filter parameters.
-            </h1>
-            <h1>
-              Please clear your filters and try again.
-            </h1>
-          </div>
+    <div>
+      <ul className="restaurants">
+        { 
+          rList.length ? 
+          rList.slice(0, maxItems).map((restaurant) => <RestaurantItem R={restaurant} key={restaurant.resId}/>)
+          : <div>
+              <h1>
+                No venues match your filter parameters.
+              </h1>
+              <h1>
+                Please clear your filters and try again.
+              </h1>
+            </div>
+        }
+      </ul>
+      {
+        maxItems < rList.length && 
+        <button className="btn" onClick={loadAdditionalItems}> LOAD MORE </button>
       }
-    </ul>
+    </div>
   )
 }

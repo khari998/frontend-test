@@ -8,11 +8,11 @@ Completed
   Make Restaurants populate in a grid for RestaurantList
   Format Filtering
   Connect state with Redux
-
-Todo
   Make stateful filtering functional
   Manage any additional state
     Load more under the grid needs to produce more restaurants when clicked
+
+Todo
   Setup Router to reviews page 
   Setup reviews page
   Make GraphQL/Apollo server
@@ -22,10 +22,17 @@ Todo
   Optimize server side filtering
   Styling -- SASS available
     Fix image width && height
+    Make dropdown hover over content
+    Get rid of Li bullet points
+    Make clear all button disabled when no filters are active
+    Adjust fonts and sizing
+    Color Scheme
+      Color Map Marker if possible
   Heroku Deploy
   Unit Tests
   More Tests - Use Storybook https://storybook.js.org/
     Change all divs to Fragments for more performance
+  Make Responsive
   Documentation -- Include Conclusion with optimizations
 
 Extra
