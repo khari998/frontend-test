@@ -22,18 +22,27 @@ export default function FilterRestaurants() {
   } 
   
   const clearAll = () => {
-    // Return new array as state with selected property as false to deselect all categories
+    // Pass new array as state with selected property as false to deselect all categories
     const clearCats = ddCats.map((item: DdItem) => {
-      item.selected = false;
+      if (item.content !== "All") { // Account for All filter edge case
+        item.selected = false;
+      } else {
+        item.selected = true;
+      }
       return item;
     });
 
-    // Return new array as state with selected property as false to deselect all prices
+    // Pass new array as state with selected property as false to deselect all prices
     const clearPrices = ddPrices.map((item: DdItem) => {
-      item.selected = false;
+      if (item.content !== "All") { // Account for All filter edge case
+        item.selected = false;
+      } else {
+        item.selected = true; // Set All filter to true when the rest are cleared
+      }
       return item;
     });
-
+    
+    // Dispatch changes to state on redux store
     dispatch(closeOpenToggle()) // Sets Open filter to false
     dispatch(priceItemToggle(clearPrices)) // Pass new array to change state
     dispatch(catItemToggle(clearCats)) // Pass new array to change state

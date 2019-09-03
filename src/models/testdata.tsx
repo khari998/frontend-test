@@ -100,13 +100,13 @@ const phoReviews = [
 
 export const exRestaurants = [
   new Restaurant('1', 'Carrabas', categoriesArr[1].content, true, costArr[3].content, 4, carReviews, imgs.car),
-  new Restaurant('2', 'Copelands', categoriesArr[1].content, true, costArr[4].content, 4, copeReviews, imgs.cope),
-  new Restaurant('3', 'Dragos', categoriesArr[2].content, true, costArr[4].content, 4, dragReviews, imgs.dragos),
+  new Restaurant('2', 'Copelands', categoriesArr[1].content, false, costArr[4].content, 4, copeReviews, imgs.cope),
+  new Restaurant('3', 'Dragos', categoriesArr[2].content, false, costArr[4].content, 4, dragReviews, imgs.dragos),
   new Restaurant('4', 'Red Lobster', categoriesArr[2].content, true, costArr[3].content, 4, redReviews, imgs.redL),
   new Restaurant('5', 'Outback', categoriesArr[3].content, true, costArr[4].content, 4, outReviews, imgs.outb),
-  new Restaurant('6', 'Panda Express', categoriesArr[4].content, true, costArr[1].content, 4, pandaReviews, imgs.panda),
-  new Restaurant('7', 'McDonalds', categoriesArr[5].content, true, costArr[1].content, 4, mcReviews, imgs.mcDon),
-  new Restaurant('8', 'Felipe\'s', categoriesArr[6].content, true, costArr[2].content, 4, felReviews, imgs.fel),
-  new Restaurant('9', 'Chipotle', categoriesArr[6].content, true, costArr[3].content, 4, chiReviews, imgs.chi),
+  new Restaurant('6', 'Panda Express', categoriesArr[4].content, false, costArr[1].content, 4, pandaReviews, imgs.panda),
+  new Restaurant('7', 'McDonalds', categoriesArr[5].content, false, costArr[1].content, 4, mcReviews, imgs.mcDon),
+  new Restaurant('8', 'Felipe\'s', categoriesArr[6].content, false, costArr[2].content, 4, felReviews, imgs.fel),
+  new Restaurant('9', 'Chipotle', categoriesArr[6].content, false, costArr[3].content, 4, chiReviews, imgs.chi),
   new Restaurant('10', 'Pho Bistro', categoriesArr[7].content, true, costArr[4].content, 4, phoReviews, imgs.pho),
 ];
