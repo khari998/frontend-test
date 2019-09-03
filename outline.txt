@@ -11,9 +11,9 @@ Completed
   Make stateful filtering functional
   Manage any additional state
     Load more under the grid needs to produce more restaurants when clicked
+  Setup Router to reviews page 
 
 Todo
-  Setup Router to reviews page 
   Setup reviews page
   Make GraphQL/Apollo server
   Pull data from Yelp API and send to client
@@ -22,6 +22,7 @@ Todo
   Optimize server side filtering
   Styling -- SASS available
     Fix image width && height
+    Initial render must have 4 restaurants per row
     Make dropdown hover over content
     Get rid of Li bullet points
     Make clear all button disabled when no filters are active

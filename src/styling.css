@@ -88,6 +88,7 @@ img {
 .card-media::before {
   content: "";
   display: flex;
+  
 
 }
 
@@ -141,3 +142,15 @@ img {
   grid-area: button;
 }
 
+.load-more{
+
+  display: block;
+  border: 0;
+  margin: 1em auto;
+  padding: .75em 1em;
+  font-size: 1em;
+  background-color: white;
+  color: navy;
+  font-weight: 400;
+  cursor: pointer;
+}

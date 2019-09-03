@@ -61,7 +61,7 @@ export default function RestaurantList({ rList } : rListProps) {
       </ul>
       {
         maxItems < rList.length && 
-        <button className="btn" onClick={loadAdditionalItems}> LOAD MORE </button>
+        <button className="btn load-more" onClick={loadAdditionalItems}> LOAD MORE </button>
       }
     </div>
   )

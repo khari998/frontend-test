@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { exRestaurants } from '../models/testdata'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Restaurant } from '../models/models'
 
@@ -52,7 +52,9 @@ export default function RestaurantItem({ R }: rListItemProps) {
             </div>
           </div>
 
-          <button className="btn btn-block" onClick={() => {}}> LEARN MORE </button>
+          <button className="btn btn-block" onClick={() => {}}> 
+            <Link to={`/reviews/${R.resId}`}>LEARN MORE</Link>
+          </button>
         
         </div>
       </div>
