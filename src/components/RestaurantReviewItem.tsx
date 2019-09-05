@@ -25,7 +25,7 @@ export default function RestaurantReviewItem({ review } : reviewsProp) {
   return (
     <div>
       <div className="rev-img">
-        {}
+        {"REVIEW IMAGE"}
       </div>
 
       <div className="rev-meta">
