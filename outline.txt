@@ -13,10 +13,12 @@ Completed
     Load more under the grid needs to produce more restaurants when clicked
   Setup Router to reviews page 
   Format reviews page
+  Make GraphQL server
+  Pull data from Yelp API 
 
 Todo
-  Make GraphQL/Apollo server
-  Pull data from Yelp API and send to client
+  Implement Apollo
+  Send Yelp data to client
     Map over Yelp data and render to page
   Add map to reviews page
   Optimize server side filtering
