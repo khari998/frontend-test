@@ -12,9 +12,9 @@ Completed
   Manage any additional state
     Load more under the grid needs to produce more restaurants when clicked
   Setup Router to reviews page 
+  Format reviews page
 
 Todo
-  Setup reviews page
   Make GraphQL/Apollo server
   Pull data from Yelp API and send to client
     Map over Yelp data and render to page
@@ -23,8 +23,11 @@ Todo
   Styling -- SASS available
     Fix image width && height
     Initial render must have 4 restaurants per row
+    Add dividers
+      Underline filter boxes
     Make dropdown hover over content
     Get rid of Li bullet points
+    Style Reviews Page
     Make clear all button disabled when no filters are active
     Adjust fonts and sizing
     Color Scheme
