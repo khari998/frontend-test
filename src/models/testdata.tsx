@@ -1,4 +1,5 @@
-export {}
+export {} // to make typescript happy
+
 // import { Restaurant, Review } from './models';
 // import { costArr } from '../models/ddData'
 

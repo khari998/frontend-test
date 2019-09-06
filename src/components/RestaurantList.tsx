@@ -2,18 +2,13 @@ import * as React from 'react'
 import RestaurantItem from './RestaurantItem'
 import { Restaurant, DdItem } from '../models/models'
 import { useSelector, useDispatch } from 'react-redux';
-import { loadMore } from '../redux/actions/actions';
-
-// interface rListProps {
-//   rList: Restaurant[],
-// }
+import { loadMore, updateRestaurants } from '../redux/actions/actions';
 
 export default function RestaurantList() {
   // Redux hook that allows actions to be dispatched
   const dispatch = useDispatch();
 
   let rList = useSelector((state: any) => state.restaurants) 
-
 
   // Redux hook to grab maxItems and openFilter from redux store
   const maxItems = useSelector((state: any) => state.maxItems);
@@ -30,16 +25,19 @@ export default function RestaurantList() {
   // Filtering logic for restaurant rendering
   if (openFilter) { // Filter all restaurants that are Open 
     rList = rList.filter((rest : Restaurant) => rest.isOpen);
+    dispatch(updateRestaurants(rList)) // update redux state
   }
 
   // Filter all restaurants that have a category matching a selected category
   if (catFilterContent.length && catFilterContent[0] !== "All") {
     rList = rList.filter((rest: Restaurant) => catFilterContent.includes(rest.category));
+    dispatch(updateRestaurants(rList)) // update redux state
   }
 
   // Filter all restaurants that have a price matching a selected price
   if (priceFilterContent.length && priceFilterContent[0] !== "All") {
     rList = rList.filter((rest: Restaurant) => priceFilterContent.includes(rest.cost));
+    dispatch(updateRestaurants(rList)) // update redux state
   }
 
   const loadAdditionalItems = () => { // Increases maximum items that can be loaded

@@ -11,34 +11,25 @@ import RestaurantList from './RestaurantList';
 import { Restaurant, DdItem } from '../models/models';
 import { catItemToggle, updateRestaurants } from '../redux/actions/actions' 
 export default function Main(): JSX.Element {
-  // Redux hook, grabbing current restaurants on redux store
   // Redux hook that allows actions to be dispatched
   const dispatch = useDispatch();
   
-  // // Special react hook for async functions
-  // useAsyncEffect(async () => { // Executes on initial render. Replaces ComponentDidMount
-  //   // Api call to GraphQL endpoint
-  //   // Format data to an array of Restaurant Classes
-  //   // Set redux state to new restaurants from GraphQL endpoint
-  //   // dispatch(updateRestaurants()) -- final array is passed into updateRestaurants
-  // }, [])
-  
   const RestaurantQuery = gql`
-  query RestaurantQuery {
-    restaurants {
-      id
-      name
-      price
-      rating
-      categories {
-        title
+    query RestaurantQuery {
+      restaurants {
+        id
+        name
+        price
+        rating
+        categories {
+          title
+        }
+        hours {
+          is_open_now
+        }
+        photos
       }
-      hours {
-        is_open_now
-      }
-      photos
     }
-  }
   `;
   
   return (
@@ -56,7 +47,7 @@ export default function Main(): JSX.Element {
             if (error) { 
               console.log(error) 
             }
-            console.log(data)
+
             const yelpRestaurants: Restaurant[] = data.restaurants // Creates array of restaurant classes
               .map((rest: any) => new Restaurant(
                 rest.id, 
@@ -78,8 +69,8 @@ export default function Main(): JSX.Element {
               
             const allCategories = [new DdItem('All', true), ...yelpCategories]
             
-            dispatch(updateRestaurants(yelpRestaurants))
-            dispatch(catItemToggle(allCategories))
+            dispatch(updateRestaurants(yelpRestaurants)) // Update redux state with list of restaurants
+            dispatch(catItemToggle(allCategories)) // Update redux state with list of unique categories
 
             return <Fragment>
                     <h1>Restaurants</h1>

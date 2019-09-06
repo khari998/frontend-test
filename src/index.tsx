@@ -44,7 +44,6 @@ const store = createStore(
   },
 );
 
-console.log(store.getState()) // log initial state for development
 
 const rootId = document.getElementById('root'); // Access root id property on index.html
 

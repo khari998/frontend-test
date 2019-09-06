@@ -23,10 +23,10 @@ Completed
     Optimize server side filtering/Queries
       Apollo cache
       Only request necessary information on home page for faster loads
-
-Todo
   Dynmically load categories from home page Query
   Render stars as react component
+
+Todo
   Account for multiple categories on one Restaurant
   Rename properties on models to match GraphQL API
   Query only necessary information on reviews page
