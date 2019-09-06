@@ -28,7 +28,8 @@ export default function RestaurantItem({ R }: rListItemProps) {
           <div className="card-text">
             <div className="text-container">
               <div className="meta-left">
-                {`${R.category} · ${R.cost}`}
+                { R.category.map((str, ind) => <p key={ind}>{str}</p>) } 
+                { `· ${R.cost}`}
               </div>
               <div className="meta-right">
                 { R.isOpen ? <FontAwesomeIcon icon="circle" color="green" /> : <FontAwesomeIcon icon="circle" color="red"/> }

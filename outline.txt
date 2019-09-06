@@ -25,9 +25,9 @@ Completed
       Only request necessary information on home page for faster loads
   Dynmically load categories from home page Query
   Render stars as react component
+  Account for multiple categories on one Restaurant
 
 Todo
-  Account for multiple categories on one Restaurant
   Rename properties on models to match GraphQL API
   Query only necessary information on reviews page
   Add map to reviews page
@@ -50,6 +50,7 @@ Todo
   Unit Tests
   More Tests - Use Storybook https://storybook.js.org/
     Change all divs to Fragments for more performance
+    Convert functions to arrow syntax
   Make Responsive
   Documentation -- Include Conclusion with optimizations
 

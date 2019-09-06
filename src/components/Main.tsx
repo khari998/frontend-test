@@ -52,7 +52,7 @@ export default function Main(): JSX.Element {
               .map((rest: any) => new Restaurant(
                 rest.id, 
                 rest.name,
-                rest.categories[0].title,
+                rest.categories.map((obj : any) => obj.title),
                 rest.hours[0].is_open_now,
                 rest.price,
                 rest.rating,
@@ -60,14 +60,14 @@ export default function Main(): JSX.Element {
               );
               
             const yelpCategories: DdItem[] = data.restaurants // Creates array of unique categories
-              .map((rest: any) => rest.categories)
-              .map((catArr: []) => catArr
-              .map((catObj: any) => catObj.title))
-              .flat(1)
-              .filter((cat: string, index: number, array: any) => array.indexOf(cat) >= index)
-              .map((cat: string, ind: number) => new DdItem(cat, false))
+              .map((rest: any) => rest.categories) // maps to categories
+              .map((catArr: []) => catArr.map((catObj: any) => catObj.title)) // Changes array into list of strings
+              .flat(1) // Flattens nested arrays into one array
+              .filter((cat: string, index: number, array: any) => array.indexOf(cat) >= index) // Filters unique categories
+              .sort() // Sorts alphabetically
+              .map((cat: string) => new DdItem(cat, false)) // maps to DdItem
               
-            const allCategories = [new DdItem('All', true), ...yelpCategories]
+            const allCategories = [new DdItem('All', true), ...yelpCategories] // Adds "All" filter to DdItem list
             
             dispatch(updateRestaurants(yelpRestaurants)) // Update redux state with list of restaurants
             dispatch(catItemToggle(allCategories)) // Update redux state with list of unique categories

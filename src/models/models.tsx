@@ -39,7 +39,7 @@ export class Review { // class model for Reviews
 export class Restaurant { // class model for Restaurants
   resId: string;
   title: string;
-  category: string;
+  category: string[];
   isOpen: boolean;
   cost: string;
   avg_rating: number;
@@ -48,7 +48,7 @@ export class Restaurant { // class model for Restaurants
   constructor(
     resId: string,
     title: string,
-    category: string,
+    category: string[],
     isOpen: boolean,
     cost: string,
     avg_rating: number,
