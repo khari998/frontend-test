@@ -12,8 +12,7 @@ import { ApolloProvider } from 'react-apollo'
 library.add(fab, faAngleUp, faAngleDown, faStar, faStarHalfAlt, farStar, faCircle, farCircle, faDotCircle, faCheckCircle)
 
 import App from './components/App'
-import { exRestaurants } from './models/testdata'
-import { categoriesArr, costArr } from './models/ddData'
+import { costArr } from './models/ddData'
 import { 
   restaurantsReducer, 
   openFilterReducer, 
@@ -41,9 +40,7 @@ const allReducers = combineReducers({ // combines state from multiple reducers
 const store = createStore(
   allReducers, // passing combined reducers to store as state
   { // pass default state for the store dictated by reducers as second argument
-    restaurants: exRestaurants, // set example restaurant data as default state for development
     ddPrices: costArr, // set array of cost range as default state
-    ddCats: categoriesArr, // set array of categories as default state
   },
 );
 

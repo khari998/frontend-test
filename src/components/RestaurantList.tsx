@@ -4,13 +4,16 @@ import { Restaurant, DdItem } from '../models/models'
 import { useSelector, useDispatch } from 'react-redux';
 import { loadMore } from '../redux/actions/actions';
 
-interface rListProps {
-  rList: Restaurant[],
-}
+// interface rListProps {
+//   rList: Restaurant[],
+// }
 
-export default function RestaurantList({ rList } : rListProps) {
+export default function RestaurantList() {
   // Redux hook that allows actions to be dispatched
   const dispatch = useDispatch();
+
+  let rList = useSelector((state: any) => state.restaurants) 
+
 
   // Redux hook to grab maxItems and openFilter from redux store
   const maxItems = useSelector((state: any) => state.maxItems);
@@ -48,7 +51,7 @@ export default function RestaurantList({ rList } : rListProps) {
       <ul className="restaurants">
         { 
           rList.length ? 
-          rList.slice(0, maxItems).map((restaurant) => <RestaurantItem R={restaurant} key={restaurant.resId}/>)
+          rList.slice(0, maxItems).map((restaurant: Restaurant) => <RestaurantItem R={restaurant} key={restaurant.resId}/>)
           : <div>
               <h1>
                 No venues match your filter parameters.

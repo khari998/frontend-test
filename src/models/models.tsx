@@ -1,14 +1,11 @@
 export class DdItem { // class model for Dropdown menu items
-  itemId: string;
   content: string;
   selected: boolean;
   
   constructor(
-    itemId: string,
     content: string,
     selected: boolean,
   ) {
-    this.itemId = itemId;
     this.content = content;
     this.selected = selected;
   }
