@@ -7,6 +7,7 @@ import { useAsyncEffect } from 'use-async-effect';
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 import Spinner from 'react-spinner-material';
+import { Restaurant } from '../models/models';
 
 export default function Main(): JSX.Element {
   // Redux hook, grabbing current restaurants on redux store
@@ -15,13 +16,13 @@ export default function Main(): JSX.Element {
   // Redux hook that allows actions to be dispatched
   const dispatch = useDispatch();
 
-  // Special react hook for async functions
-  useAsyncEffect(async () => { // Executes on initial render. Replaces ComponentDidMount
-    // Api call to GraphQL endpoint
-    // Format data to an array of Restaurant Classes
-    // Set redux state to new restaurants from GraphQL endpoint
-    // dispatch(updateRestaurants()) -- final array is passed into updateRestaurants
-  }, [])
+  // // Special react hook for async functions
+  // useAsyncEffect(async () => { // Executes on initial render. Replaces ComponentDidMount
+  //   // Api call to GraphQL endpoint
+  //   // Format data to an array of Restaurant Classes
+  //   // Set redux state to new restaurants from GraphQL endpoint
+  //   // dispatch(updateRestaurants()) -- final array is passed into updateRestaurants
+  // }, [])
 
   const RestaurantQuery = gql`
     query RestaurantQuery {
@@ -33,6 +34,10 @@ export default function Main(): JSX.Element {
         categories {
           title
         }
+        hours {
+          is_open_now
+        }
+        photos
       }
     }
   `;
@@ -53,12 +58,21 @@ export default function Main(): JSX.Element {
               console.log(error) 
             }
             console.log(data)
-            const yelpRestaurants = [];
+            const yelpRestaurants: Restaurant[] = data.restaurants.map((rest: any) => new Restaurant(
+              rest.id, 
+              rest.name,
+              rest.categories[0].title,
+              rest.hours[0].is_open_now,
+              rest.price,
+              rest.rating,
+              rest.photos[0]));
+
+            const yelpCategories = [];
             return <Fragment>
                     <h1>Restaurants</h1>
                     <p>Browse through a curated list of your favorite restaurants</p>
                     <FilterRestaurants />
-                    <RestaurantList rList={restaurants} />
+                    <RestaurantList rList={yelpRestaurants} />
                   </Fragment>
           }
         }

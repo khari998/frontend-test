@@ -46,7 +46,6 @@ export class Restaurant { // class model for Restaurants
   isOpen: boolean;
   cost: string;
   avg_rating: number;
-  reviews: Review[]; // Instantiated with an array of Review classes
   img: string;
 
   constructor(
@@ -56,7 +55,6 @@ export class Restaurant { // class model for Restaurants
     isOpen: boolean,
     cost: string,
     avg_rating: number,
-    reviews: Review[],
     img: string,
   ) {
     this.resId = resId;
@@ -65,7 +63,6 @@ export class Restaurant { // class model for Restaurants
     this.isOpen = isOpen;
     this.cost = cost;
     this.avg_rating = avg_rating;
-    this.reviews = reviews;
     this.img = img;
   }
 }

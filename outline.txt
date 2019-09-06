@@ -16,12 +16,21 @@ Completed
   Make GraphQL server
   Pull data from Yelp API 
   Implement Apollo
-
-Todo
   Send Yelp data to client
     Map over Yelp data and render to page
+    Refactor models to better optimize Queries
+      Decouple Reviews from Restaurants
+    Optimize server side filtering/Queries
+      Apollo cache
+      Only request necessary information on home page for faster loads
+
+Todo
+  Dynmically load categories from home page Query
+  Render stars as react component
+  Account for multiple categories on one Restaurant
+  Rename properties on models to match GraphQL API
+  Query only necessary information on reviews page
   Add map to reviews page
-  Optimize server side filtering
   Styling -- SASS available
     Fix image width && height
     Initial render must have 4 restaurants per row
@@ -36,6 +45,7 @@ Todo
       Color Map Marker if possible
   Separate client/server folders and dependencies
     Update necessary paths
+    Clean up dependencies
   Heroku Deploy
   Unit Tests
   More Tests - Use Storybook https://storybook.js.org/
@@ -45,5 +55,6 @@ Todo
 
 Extra
   Flutter native mobile version
+  Refactor server code to typescript
   Persist data to backend (favorite restaurants)
   More Styling -- add Animations

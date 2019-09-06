@@ -48,13 +48,13 @@ export default function RestaurantReviews({ match }: any) { // id property is in
         {"MAP COMPONENT"}
       </div>
 
-      <div>
+      {/* <div>
         {`${selectedRest.reviews.length}  Reviews`}
       </div>
 
       <div>
         {selectedRest.reviews.map((review: Review) => <RestaurantReviewItem review={review} key={review.revId} />)}
-      </div>
+      </div> */}
       
     </Fragment>
   )
