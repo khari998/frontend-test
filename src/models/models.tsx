@@ -18,6 +18,7 @@ export class Review { // class model for Reviews
   date: string;
   rating: number;
   review: string;
+  image: string;
 
   constructor(
     revId: string,
@@ -26,6 +27,7 @@ export class Review { // class model for Reviews
     date: string,
     rating: number,
     review: string,
+    image: string,
   ) {
     this.revId = revId;
     this.resId = resId;
@@ -33,6 +35,7 @@ export class Review { // class model for Reviews
     this.date = date;
     this.rating = rating;
     this.review = review;
+    this.image = image
   }
 }
 
@@ -44,6 +47,9 @@ export class Restaurant { // class model for Restaurants
   cost: string;
   avg_rating: number;
   img: string;
+  location: string;
+  totReviews: number;
+  reviews: Review[];
 
   constructor(
     resId: string,
@@ -53,6 +59,9 @@ export class Restaurant { // class model for Restaurants
     cost: string,
     avg_rating: number,
     img: string,
+    location: string,
+    totReviews: number,
+    reviews: Review[],
   ) {
     this.resId = resId;
     this.title = title;
@@ -61,5 +70,9 @@ export class Restaurant { // class model for Restaurants
     this.cost = cost;
     this.avg_rating = avg_rating;
     this.img = img;
+    this.location = location;
+    this.totReviews = totReviews;
+    this.reviews = reviews;
+
   }
 }

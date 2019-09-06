@@ -37,7 +37,6 @@ const RestaurantType = new GraphQLObjectType({
     hours: { type: GraphQLList(HoursType)},
     categories: { type: GraphQLList(CatType)},
     reviews: { type: GraphQLList(ReviewsType)},
-
   })
 })
 

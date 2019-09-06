@@ -19,17 +19,16 @@ Completed
   Send Yelp data to client
     Map over Yelp data and render to page
     Refactor models to better optimize Queries
-      Decouple Reviews from Restaurants
+      Decouple Reviews from Restaurants 
     Optimize server side filtering/Queries
       Apollo cache
       Only request necessary information on home page for faster loads
   Dynmically load categories from home page Query
   Render stars as react component
   Account for multiple categories on one Restaurant
+  Reviews added back to restaurant class for rendering -- see Roadblock section
 
 Todo
-  Rename properties on models to match GraphQL API
-  Query only necessary information on reviews page
   Add map to reviews page
   Styling -- SASS available
     Fix image width && height
@@ -53,6 +52,16 @@ Todo
     Convert functions to arrow syntax
   Make Responsive
   Documentation -- Include Conclusion with optimizations
+
+Roadblocks
+  Query only necessary information on reviews page
+    Removing reviews from initial query decreases latency by 1.0s on average however,
+    in order to query graphQL separately, the restaurant ID of the clicked restaurant
+    needs to be passed from the client to the server in order to make queries for reviews
+    of that specific restaurant. No clear method has been identified to successfully decouple
+    the restaurant ID from the client and dynmically send it to the server. Current solution
+    works with query that requests all data on intial page render, but comes at a performance 
+    cost of about 1.0s of loading on intial render.
 
 Extra
   Flutter native mobile version

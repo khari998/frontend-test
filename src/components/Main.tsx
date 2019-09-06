@@ -8,7 +8,7 @@ import Spinner from 'react-spinner-material';
 
 import FilterRestaurants from './FilterRestaurants';
 import RestaurantList from './RestaurantList';
-import { Restaurant, DdItem } from '../models/models';
+import { Restaurant, DdItem, Review } from '../models/models';
 import { catItemToggle, updateRestaurants } from '../redux/actions/actions' 
 export default function Main(): JSX.Element {
   // Redux hook that allows actions to be dispatched
@@ -21,6 +21,10 @@ export default function Main(): JSX.Element {
         name
         price
         rating
+        review_count
+        location {
+          formatted_address
+        }
         categories {
           title
         }
@@ -28,6 +32,16 @@ export default function Main(): JSX.Element {
           is_open_now
         }
         photos
+        reviews {
+          id
+          rating
+          text
+          time_created
+          user {
+            name
+            image_url
+          }
+        }
       }
     }
   `;
@@ -47,16 +61,29 @@ export default function Main(): JSX.Element {
             if (error) { 
               console.log(error) 
             }
+            console.log(data.restaurants)
 
             const yelpRestaurants: Restaurant[] = data.restaurants // Creates array of restaurant classes
               .map((rest: any) => new Restaurant(
-                rest.id, 
-                rest.name,
-                rest.categories.map((obj : any) => obj.title),
-                rest.hours[0].is_open_now,
-                rest.price,
-                rest.rating,
-                rest.photos[0])
+                  rest.id, 
+                  rest.name,
+                  rest.categories.map((obj : any) => obj.title),
+                  rest.hours[0].is_open_now,
+                  rest.price,
+                  rest.rating,
+                  rest.photos[0],
+                  rest.location.formatted_address,
+                  rest.review_count,
+                  rest.reviews.map((rev: any) => new Review( // Adds Array of reviews to Restaurant
+                    rev.id, 
+                    rest.id, 
+                    rev.user.name, 
+                    rev.time_created, 
+                    rev.rating, 
+                    rev.text, 
+                    rev.user.image_url
+                  )),
+                )
               );
               
             const yelpCategories: DdItem[] = data.restaurants // Creates array of unique categories
