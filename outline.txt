@@ -15,9 +15,9 @@ Completed
   Format reviews page
   Make GraphQL server
   Pull data from Yelp API 
+  Implement Apollo
 
 Todo
-  Implement Apollo
   Send Yelp data to client
     Map over Yelp data and render to page
   Add map to reviews page
@@ -34,6 +34,8 @@ Todo
     Adjust fonts and sizing
     Color Scheme
       Color Map Marker if possible
+  Separate client/server folders and dependencies
+    Update necessary paths
   Heroku Deploy
   Unit Tests
   More Tests - Use Storybook https://storybook.js.org/

@@ -7,8 +7,10 @@ const schema = require('./schema')
 
 const app = express()
 
+// Allow Cross Origin Policy
 app.use(cors());
 
+// Points to graphql endpoint
 app.use('/graphql', graphqlHTTP({
   schema,
   graphiql: true,
