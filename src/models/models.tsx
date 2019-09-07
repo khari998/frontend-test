@@ -47,7 +47,7 @@ export class Restaurant { // class model for Restaurants
   cost: string;
   avg_rating: number;
   img: string;
-  location: string;
+  location: number[];
   totReviews: number;
   reviews: Review[];
 
@@ -59,7 +59,7 @@ export class Restaurant { // class model for Restaurants
     cost: string,
     avg_rating: number,
     img: string,
-    location: string,
+    location: number[],
     totReviews: number,
     reviews: Review[],
   ) {

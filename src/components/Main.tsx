@@ -22,8 +22,9 @@ export default function Main(): JSX.Element {
         price
         rating
         review_count
-        location {
-          formatted_address
+        coordinates {
+          latitude,
+          longitude
         }
         categories {
           title
@@ -59,9 +60,8 @@ export default function Main(): JSX.Element {
             }
             
             if (error) { 
-              console.log(error) 
+              console.error(error) 
             }
-            console.log(data.restaurants)
 
             const yelpRestaurants: Restaurant[] = data.restaurants // Creates array of restaurant classes
               .map((rest: any) => new Restaurant(
@@ -72,7 +72,7 @@ export default function Main(): JSX.Element {
                   rest.price,
                   rest.rating,
                   rest.photos[0],
-                  rest.location.formatted_address,
+                  Object.keys(rest.coordinates).map(keys => rest.coordinates[keys]).slice(0, 2), // Array of coordinate points from coordinate object
                   rest.review_count,
                   rest.reviews.map((rev: any) => new Review( // Adds Array of reviews to Restaurant
                     rev.id, 
@@ -85,7 +85,9 @@ export default function Main(): JSX.Element {
                   )),
                 )
               );
-              
+            
+            console.log(yelpRestaurants)
+            
             const yelpCategories: DdItem[] = data.restaurants // Creates array of unique categories
               .map((rest: any) => rest.categories) // maps to categories
               .map((catArr: []) => catArr.map((catObj: any) => catObj.title)) // Changes array into list of strings

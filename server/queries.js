@@ -7,8 +7,9 @@ const restQL = `{
       rating
       review_count
       photos
-      location {
-        formatted_address
+      coordinates {
+        latitude
+        longitude
       }
       hours {
         is_open_now

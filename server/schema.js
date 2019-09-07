@@ -33,7 +33,7 @@ const RestaurantType = new GraphQLObjectType({
     rating: { type: GraphQLFloat },
     review_count: { type: GraphQLInt } ,
     photos: { type: GraphQLList(GraphQLString)},
-    location: { type: LocationType },
+    coordinates: { type: LocationType },
     hours: { type: GraphQLList(HoursType)},
     categories: { type: GraphQLList(CatType)},
     reviews: { type: GraphQLList(ReviewsType)},
@@ -41,11 +41,12 @@ const RestaurantType = new GraphQLObjectType({
 })
 
 const LocationType = new GraphQLObjectType({
-  name: "location",
+  name: "coordinates",
   fields: () => ({
-    formatted_address: { type: GraphQLString }
+    latitude: { type: GraphQLFloat },
+    longitude: { type: GraphQLFloat }
   })
-})
+});
 
 const HoursType = new GraphQLObjectType({
   name: "hours",
@@ -90,7 +91,9 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) { // Resolve Yelp data for querying
         return yelpGraphQL
           .post("", { query: restQL })
-          .then(result => result.data.data.search.business)
+          .then(result => {
+            console.log(result.data.data.search.business);
+            return result.data.data.search.business})
           .catch(err => console.log("There was an error", err));
       },
     }

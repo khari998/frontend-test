@@ -1,4 +1,6 @@
 const path = require('path')
+const Dotenv = require("dotenv-webpack");
+
 module.exports = {
   entry: "./src/index.tsx",
   output: {
@@ -22,5 +24,7 @@ module.exports = {
     port: 3000,
     historyApiFallback: true
   },
-  plugins: []
+  plugins: [
+    new Dotenv()
+  ]
 };

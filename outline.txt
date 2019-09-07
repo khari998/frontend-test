@@ -27,9 +27,9 @@ Completed
   Render stars as react component
   Account for multiple categories on one Restaurant
   Reviews added back to restaurant class for rendering -- see Roadblock section
+  Add map to reviews page
 
 Todo
-  Add map to reviews page
   Styling -- SASS available
     Fix image width && height
     Initial render must have 4 restaurants per row
@@ -53,6 +53,12 @@ Todo
   Make Responsive
   Documentation -- Include Conclusion with optimizations
 
+Extra
+  Flutter native mobile version
+  Refactor server code to typescript
+  Persist data to backend (favorite restaurants)
+  More Styling -- add Animations
+
 Roadblocks
   Query only necessary information on reviews page
     Removing reviews from initial query decreases latency by 1.0s on average however,
@@ -62,9 +68,8 @@ Roadblocks
     the restaurant ID from the client and dynmically send it to the server. Current solution
     works with query that requests all data on intial page render, but comes at a performance 
     cost of about 1.0s of loading on intial render.
-
-Extra
-  Flutter native mobile version
-  Refactor server code to typescript
-  Persist data to backend (favorite restaurants)
-  More Styling -- add Animations
+  Solution
+    - Configure graphQL endpoint to do a post request from client with ID of restaurant on req.body
+    and congure new post request to Yelp API endpiont within graphql Route
+    - Switch from graphQL to express for routes and handle logic to post to Yelp GraphQL endpoint after 
+    the id is received on server from client. Send final queried data back as response to client.
