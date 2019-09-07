@@ -34,6 +34,15 @@ export default function Dropdown({ ddList, ddHeader, ddOpen } : ddProps) {
       tempList[itemInd] = newItem; // Replace old DdItem with updated newItem
       allFilter.selected = false; // Set the All filter selected property to false if any other item is selected
       tempList[0] = allFilter; // Update list with new All filter
+
+      // update all filter if no items are selected
+      if(tempList.every((item: DdItem) => item.selected === false)) {
+        allFilter.selected = true; // Set the All filter selected property to true if no items are selected
+        tempList[0] = allFilter;
+      }
+      
+      
+      
     } else if (itemInd === 0 && !allFilter.selected) {  
       // If the All filter is slected while currently false, set all other item selected properties to false
       tempList.forEach((item: DdItem, index: number) => {

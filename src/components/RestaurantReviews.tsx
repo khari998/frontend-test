@@ -75,9 +75,12 @@ export default function RestaurantReviews({ match }: any) { // id property is in
 
       <div>
         <OutputMap/>
-        {selectedRest.location}
       </div>
 
+      <div>
+        { selectedRest.location }
+      </div>
+      
       <div>
         {`${selectedRest.totReviews}  Reviews`}
       </div>

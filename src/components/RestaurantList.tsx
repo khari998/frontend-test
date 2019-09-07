@@ -37,6 +37,7 @@ export default function RestaurantList() {
     rList = rList.filter((rest: Restaurant) => priceFilterContent.includes(rest.cost));
   }
 
+
   const loadAdditionalItems = () => { // Increases maximum items that can be loaded
     dispatch(loadMore()) // Dispatches loadMore action to increase maxItems
   }
