@@ -33,7 +33,8 @@ const RestaurantType = new GraphQLObjectType({
     rating: { type: GraphQLFloat },
     review_count: { type: GraphQLInt } ,
     photos: { type: GraphQLList(GraphQLString)},
-    coordinates: { type: LocationType },
+    location: { type: LocationType}, 
+    coordinates: { type: CoordinatesType },
     hours: { type: GraphQLList(HoursType)},
     categories: { type: GraphQLList(CatType)},
     reviews: { type: GraphQLList(ReviewsType)},
@@ -41,6 +42,13 @@ const RestaurantType = new GraphQLObjectType({
 })
 
 const LocationType = new GraphQLObjectType({
+  name: "location",
+  fields: () => ({
+    formatted_address: { type: GraphQLString }
+  })
+});
+
+const CoordinatesType = new GraphQLObjectType({
   name: "coordinates",
   fields: () => ({
     latitude: { type: GraphQLFloat },

@@ -21,7 +21,7 @@ export default function RestaurantReviews({ match }: any) { // id property is in
   // Access restaurant that was clicked by matching the id property to the restaruant held in state
   const selectedRest: Restaurant = useSelector((state: any) => state.restaurants).filter((rest: Restaurant) => rest.resId === match.params.id)[0]
   
-  const restPosition = { lat: selectedRest.location[0], lng: selectedRest.location[1] }
+  const restPosition = { lat: selectedRest.coordinates[0], lng: selectedRest.coordinates[1] }
 
   const Map = () => {
     return (
@@ -75,6 +75,7 @@ export default function RestaurantReviews({ match }: any) { // id property is in
 
       <div>
         <OutputMap/>
+        {selectedRest.location}
       </div>
 
       <div>

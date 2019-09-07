@@ -32,6 +32,9 @@ export default function Main(): JSX.Element {
         hours {
           is_open_now
         }
+        location{
+          formatted_address
+        }
         photos
         reviews {
           id
@@ -63,6 +66,8 @@ export default function Main(): JSX.Element {
               console.error(error) 
             }
 
+            // console.log(data)
+
             const yelpRestaurants: Restaurant[] = data.restaurants // Creates array of restaurant classes
               .map((rest: any) => new Restaurant(
                   rest.id, 
@@ -72,8 +77,9 @@ export default function Main(): JSX.Element {
                   rest.price,
                   rest.rating,
                   rest.photos[0],
-                  Object.keys(rest.coordinates).map(keys => rest.coordinates[keys]).slice(0, 2), // Array of coordinate points from coordinate object
                   rest.review_count,
+                  rest.location.formatted_address,
+                  Object.keys(rest.coordinates).map(keys => rest.coordinates[keys]).slice(0, 2), // Array of coordinate points from coordinate object
                   rest.reviews.map((rev: any) => new Review( // Adds Array of reviews to Restaurant
                     rev.id, 
                     rest.id, 

@@ -28,9 +28,10 @@ Completed
   Account for multiple categories on one Restaurant
   Reviews added back to restaurant class for rendering -- see Roadblock section
   Add map to reviews page
+  Styling -- SASS available
+      Color Map Marker if possible
 
 Todo
-  Styling -- SASS available
     Fix image width && height
     Initial render must have 4 restaurants per row
     Add dividers
@@ -41,7 +42,6 @@ Todo
     Make clear all button disabled when no filters are active
     Adjust fonts and sizing
     Color Scheme
-      Color Map Marker if possible
   Separate client/server folders and dependencies
     Update necessary paths
     Clean up dependencies

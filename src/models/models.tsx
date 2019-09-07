@@ -47,10 +47,10 @@ export class Restaurant { // class model for Restaurants
   cost: string;
   avg_rating: number;
   img: string;
-  location: number[];
+  coordinates: number[];
   totReviews: number;
   reviews: Review[];
-
+  location: string;
   constructor(
     resId: string,
     title: string,
@@ -59,8 +59,9 @@ export class Restaurant { // class model for Restaurants
     cost: string,
     avg_rating: number,
     img: string,
-    location: number[],
     totReviews: number,
+    location: string,
+    coordinates: number[],
     reviews: Review[],
   ) {
     this.resId = resId;
@@ -70,9 +71,9 @@ export class Restaurant { // class model for Restaurants
     this.cost = cost;
     this.avg_rating = avg_rating;
     this.img = img;
-    this.location = location;
+    this.coordinates = coordinates;
     this.totReviews = totReviews;
     this.reviews = reviews;
-
+    this.location = location;
   }
 }
