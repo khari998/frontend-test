@@ -100,7 +100,7 @@ const RootQuery = new GraphQLObjectType({
         return yelpGraphQL
           .post("", { query: restQL })
           .then(result => {
-            console.log(result.data.data.search.business);
+            console.log(result.data.data.search.business.data);
             return result.data.data.search.business})
           .catch(err => console.log("There was an error", err));
       },

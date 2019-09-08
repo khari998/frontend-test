@@ -12,7 +12,7 @@ import { ApolloProvider } from 'react-apollo'
 library.add(fab, faAngleUp, faAngleDown, faStar, faStarHalfAlt, farStar, faCircle, farCircle, faDotCircle, faCheckCircle)
 
 import App from './components/App'
-import { costArr } from './models/ddData'
+import { costArr, categoriesArr } from './models/ddData'
 import { 
   restaurantsReducer, 
   openFilterReducer, 
@@ -22,6 +22,9 @@ import {
   ddItemCatReducer,
   loadMoreReducer
 } from './redux/reducers/reducers'
+import { exRestaurants } from './models/testdata'
+
+
 
 const client = new ApolloClient({
   uri: 'http://localhost:5000/graphql'
@@ -41,6 +44,8 @@ const store = createStore(
   allReducers, // passing combined reducers to store as state
   { // pass default state for the store dictated by reducers as second argument
     ddPrices: costArr, // set array of cost range as default state
+    restaurants: exRestaurants,
+    ddCats: categoriesArr
   },
 );
 

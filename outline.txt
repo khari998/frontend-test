@@ -29,19 +29,22 @@ Completed
   Reviews added back to restaurant class for rendering -- see Roadblock section
   Add map to reviews page
   Styling -- SASS available
-      Color Map Marker if possible
-
-Todo
+    Color Map Marker if possible
     Fix image width && height
     Initial render must have 4 restaurants per row
-    Add dividers
-      Underline filter boxes
+    Make clear all button disabled when no filters are active
+    Color Scheme
     Make dropdown hover over content
     Get rid of Li bullet points
+
+Todo
+    Align dropdown with margin
+    Add underlines to boxes in dropdown
+    Add dividers
+      Color filter box border outline --bottom
+    Justify buttons over center of grid
     Style Reviews Page
-    Make clear all button disabled when no filters are active
     Adjust fonts and sizing
-    Color Scheme
   Separate client/server folders and dependencies
     Update necessary paths
     Clean up dependencies
@@ -50,7 +53,7 @@ Todo
   More Tests - Use Storybook https://storybook.js.org/
     Change all divs to Fragments for more performance
     Convert functions to arrow syntax
-  Make Responsive
+  Make Responsive -- Web-Mobile
   Documentation -- Include Conclusion with optimizations
 
 Extra
