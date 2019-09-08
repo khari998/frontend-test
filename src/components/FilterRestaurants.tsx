@@ -17,6 +17,14 @@ export default function FilterRestaurants() {
 
   const dispatch = useDispatch(); // redux hook that allows actions to be dispatched
 
+  // If default filter setting is selected, set boolean for clear all button to change color
+  let enabled: boolean; 
+  if (ddCats[0].selected && ddCats[0].content === 'All' && ddPrices[0].selected && ddPrices[0].content === 'All' && openFilter === false) {
+    enabled = false;
+  } else {
+    enabled = true;
+  }
+
   const toggleOpen = () => { // click handler function for toggling open filter
     dispatch(isOpenToggle()) // dispatches isOpenToggle action to redux store
   } 
@@ -49,7 +57,7 @@ export default function FilterRestaurants() {
   }
 
   return (
-    <Fragment>
+    <div className="dd-container-wrapper">
       <div className="dd-container">
 
         <div className="dd-filter">
@@ -57,7 +65,7 @@ export default function FilterRestaurants() {
         </div>
 
         <div className="dd-open" onClick={toggleOpen}>
-          { openFilter ? <FontAwesomeIcon icon={['far', 'dot-circle']} /> : <FontAwesomeIcon icon={['far', 'circle']} /> }
+          {openFilter ? <FontAwesomeIcon icon={['far', 'dot-circle']} color="#002B56" /> : <FontAwesomeIcon icon={['far', 'circle']} color="#002B56" /> }
           {'  Open Now'}
         </div>
 
@@ -77,11 +85,14 @@ export default function FilterRestaurants() {
           ></Dropdown>
         </div>
 
-        <div className="dd-button">
-          <button className="btn btn-block" onClick={clearAll}> CLEAR ALL </button>
+        <div className="dd-button" >
+          {
+            enabled ? <button className="brick" onClick={clearAll}> CLEAR ALL </button> :
+              <button className="brick" disabled onClick={clearAll}> CLEAR ALL </button>
+          }
         </div>
 
       </div>
-    </Fragment>
+    </div>
   )
 }

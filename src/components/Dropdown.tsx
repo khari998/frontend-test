@@ -61,33 +61,30 @@ export default function Dropdown({ ddList, ddHeader, ddOpen } : ddProps) {
   }
 
   return (
-    <div>
-      <div className="dd-wrapper">
 
-        <div className="dd-header" onClick={openDD}>
-          <div className="dd-header-title">
+        <div className="dd-header" >
+
+          <div className="dd-header-title" onClick={openDD}>
             { `${ddHeader}  `}
             { ddOpen ? <FontAwesomeIcon icon="angle-up"/> : <FontAwesomeIcon icon="angle-down"/> }
           </div>
-        </div>
-
-        { 
-          ddOpen &&
-          <ul className="dd-list">
-            {
-              ddList.map((listItem: DdItem, keyInd: number) => (
-                  <li 
-                    className="dd-list-item"
-                    key={keyInd}
-                    onClick={() => selectDdItem(keyInd)}
-                  >{ listItem.selected ? <FontAwesomeIcon icon="check-circle" /> : null}{`  ${listItem.content}`}</li>
+          
+          {
+            ddOpen &&
+            <ul className="dd-list">
+              {
+                ddList.map((listItem: DdItem, keyInd: number) => (
+                    <div
+                      className="dd-list-item"
+                      key={keyInd}
+                      onClick={() => selectDdItem(keyInd)}
+                  >{listItem.selected ? <FontAwesomeIcon icon="check-circle" color="#002B56" /> : <FontAwesomeIcon icon={['far', 'circle']} color="#002B56"/>}{`  ${listItem.content}`}</div>
+                  )
                 )
-              )
-            }
-          </ul>
-        }
+              }
+            </ul>
+          }
 
-      </div>
-    </div>
+        </div>
   )
 }

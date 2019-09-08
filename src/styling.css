@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 html {
-  background-color: #f0f0f0;
+  background-color: white;
 }
 body {
 
@@ -23,16 +23,36 @@ img {
   max-width: 100%;
   vertical-align: middle;
 }
-.btn {
-  background-color: white;
-  border: 1px solid #cccccc;
-  color: #696969;
-  padding: 0.5rem;
+
+nav {
+  position: absolute;
 }
+
 .btn-block {
   display: block;
   width: 100%;
 }
+
+.brick{
+  display: block;
+  width: 100%;
+  padding: 1em auto;
+}
+
+.load-more{
+  display: block;
+  border: 1px solid #002B56;
+  margin: 1em auto;
+  padding: .75em 1em;
+  font-size: 1em;
+  background-color: white;
+  color: #002B56;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 2px;
+
+}
+
 .restaurants {
   display: flex;
   flex-wrap: wrap;
@@ -94,6 +114,10 @@ img {
 
 .card-button {
   grid-area: button;
+  background-color: #002B56;
+  border: 1px solid #002B56;
+  padding: 0.5rem;
+  border-radius: 2px;
 }
 
 
@@ -127,7 +151,10 @@ img {
 
 .dd-container {
   display: grid;
-  grid-template-columns: 8% 14% 12% 14% auto 10%;
+  height: 100%;
+  justify-self: center;
+  /* overflow: hidden; */
+  grid-template-columns: 8% 14% 12% 18% auto 10%;
   grid-template-areas: "filter open dd1 dd2 space button"
 }
 
@@ -147,15 +174,55 @@ img {
   grid-area: button;
 }
 
-.load-more{
+.dd-button:disabled{
   display: block;
-  border: 3px;
-  border-color: #002B56;
+  border: 1px solid #E6E6E6;
   margin: 1em auto;
-  padding: .75em 1em;
+  padding: 0.5rem;
+  font-size: 1em;
+  background-color: white;
+  color: #C8C8C8;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 0px;
+}
+
+.dd-button:enabled{
+  display: block;
+  border: 1px solid #002B56;
+  margin: 1em auto;
+  padding: 0.5rem;
   font-size: 1em;
   background-color: white;
   color: #002B56;
   font-weight: 400;
   cursor: pointer;
+  border-radius: 2px;
 }
+
+.dd-container-wrapper {
+  width: 100%;
+  height: 1rem;
+  margin: 10px;
+  position: relative;
+}
+
+.dd-list, .dd-header-title .dd-header {
+  width: 95%;
+  height: 100%;
+  position: relative;
+
+}
+
+.dd-list{
+  z-index: 40;
+  margin: 10px 0px;
+  background-color: white;
+  display:block;
+  overflow: visible;
+  text-overflow: ellipsis;
+  height: 100%;
+  padding: 5px; 
+  border: 1px solid #002B56;
+}
+

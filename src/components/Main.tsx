@@ -16,7 +16,7 @@ export default function Main(): JSX.Element {
   
   return (
     <Fragment>
-      <Query query={RestaurantQuery}> 
+      {/* <Query query={RestaurantQuery}> 
         {
           ({ loading, error, data } : any) => {
             if (loading) { // Loads spinner while data is being fetched
@@ -75,7 +75,12 @@ export default function Main(): JSX.Element {
                   </Fragment>
           }
         }
-      </Query>
+      </Query> */}
+
+      <h1>Restaurants</h1>
+      <p>Browse through a curated list of your favorite restaurants</p>
+      <FilterRestaurants />
+      <RestaurantList />
     </Fragment>
   )
 }
