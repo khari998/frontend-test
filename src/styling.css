@@ -224,9 +224,17 @@ nav {
 
 }
 
+
+
+.dd-header-title {
+  margin-left:10px;
+  display:block;
+  border-bottom: 1px solid #002B56;
+}
+
 .dd-list{
   z-index: 40;
-  margin: 10px 0px;
+  margin-left: 10px;
   background-color: white;
   display:block;
   overflow: visible;
