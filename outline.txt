@@ -36,8 +36,10 @@ Completed
     Color Scheme
     Make dropdown hover over content
     Get rid of Li bullet points
+    Make dropdown 80 pixels with margin
 
 Todo
+    Color disabled button outline 
     Align dropdown with margin
     Add underlines to boxes in dropdown
     Add dividers
