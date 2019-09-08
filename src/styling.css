@@ -160,18 +160,28 @@ nav {
 
 .dd-filter {
   grid-area: filter;
+  margin-top:10px;
+  margin-bottom: 10px;
 }
 .dd-open {
   grid-area: open;
+  margin-top:10px;
+  margin-bottom: 10px;
 }
 .dd-dd1 {
   grid-area: dd1;
+  margin-top:10px;
+  margin-bottom: 10px;
 }
 .dd-dd2 {
   grid-area: dd2;
+  margin-top:10px;
+  margin-bottom: 10px;
 }
 .dd-button {
   grid-area: button;
+  margin-top:10px;
+  margin-bottom: 10px;
 }
 
 .dd-button:disabled{
