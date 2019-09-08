@@ -1,54 +1,18 @@
 import * as React from 'react'
 import { Fragment } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useAsyncEffect } from 'use-async-effect';
+import { useDispatch } from 'react-redux';
 import { Query } from 'react-apollo'
-import gql from 'graphql-tag'
+import { RestaurantQuery } from '../queries/mainQuery'
 import Spinner from 'react-spinner-material';
 
 import FilterRestaurants from './FilterRestaurants';
 import RestaurantList from './RestaurantList';
 import { Restaurant, DdItem, Review } from '../models/models';
 import { catItemToggle, updateRestaurants } from '../redux/actions/actions' 
+
 export default function Main(): JSX.Element {
   // Redux hook that allows actions to be dispatched
   const dispatch = useDispatch();
-  
-  const RestaurantQuery = gql`
-    query RestaurantQuery {
-      restaurants {
-        id
-        name
-        price
-        rating
-        review_count
-        coordinates {
-          latitude,
-          longitude
-        }
-        categories {
-          title
-        }
-        hours {
-          is_open_now
-        }
-        location{
-          formatted_address
-        }
-        photos
-        reviews {
-          id
-          rating
-          text
-          time_created
-          user {
-            name
-            image_url
-          }
-        }
-      }
-    }
-  `;
   
   return (
     <Fragment>
@@ -65,8 +29,6 @@ export default function Main(): JSX.Element {
             if (error) { 
               console.error(error) 
             }
-
-            // console.log(data)
 
             const yelpRestaurants: Restaurant[] = data.restaurants // Creates array of restaurant classes
               .map((rest: any) => new Restaurant(
@@ -91,8 +53,6 @@ export default function Main(): JSX.Element {
                   )),
                 )
               );
-            
-            console.log(yelpRestaurants)
             
             const yelpCategories: DdItem[] = data.restaurants // Creates array of unique categories
               .map((rest: any) => rest.categories) // maps to categories
