@@ -38,5 +38,5 @@ export const catDDToggle = () => ({
 
 export const loadMore = () => ({
   type: 'UPDATEVISIBLE',
-  payload: 8,
+  payload: 10,
 })

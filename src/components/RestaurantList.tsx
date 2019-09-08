@@ -2,7 +2,7 @@ import * as React from 'react'
 import RestaurantItem from './RestaurantItem'
 import { Restaurant, DdItem } from '../models/models'
 import { useSelector, useDispatch } from 'react-redux';
-import { loadMore, updateRestaurants } from '../redux/actions/actions';
+import { loadMore } from '../redux/actions/actions';
 
 export default function RestaurantList() {
   // Redux hook that allows actions to be dispatched

@@ -19,17 +19,19 @@ export default function RestaurantItem({ R }: rListItemProps) {
 
         <div className="card-content">
           
-          <div className="card-title">{ R.title }</div>
+          <div className="card-title meta-item">{ R.title }</div>
 
-          <div className="rating">
+          <div className="card-rating meta-item">
             <StarRating rating={ R.avg_rating } />
           </div>
 
-          <div className="card-text">
+          <div className="card-text meta-item">
             <div className="text-container">
               <div className="meta-left">
-                { R.category.map((str, ind) => <p key={ind}>{str}</p>) } 
-                { `· ${R.cost}`}
+                { R.category.map((str, ind) => <li key={ind}>{str}</li>) } 
+              </div>
+              <div className="meta-center">
+                { `·                 ${R.cost}`}
               </div>
               <div className="meta-right">
                 { R.isOpen ? <FontAwesomeIcon icon="circle" color="green" /> : <FontAwesomeIcon icon="circle" color="red"/> }
@@ -38,7 +40,7 @@ export default function RestaurantItem({ R }: rListItemProps) {
             </div>
           </div>
 
-          <button className="btn btn-block" onClick={() => {}}> 
+          <button className="btn btn-block meta-item card-button" onClick={() => {}}> 
             <Link to={`/reviews/${R.resId}`}>LEARN MORE</Link>
           </button>
         

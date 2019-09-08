@@ -38,22 +38,13 @@ img {
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
-  padding: 0;
 }
 .card-item {
   display: flex;
   padding: 1rem;
+  max-width: 312px;
 }
-@media (min-width: 40rem) {
-  .card-item {
-    width: 50%;
-  }
-}
-@media (min-width: 56rem) {
-  .card-item {
-    width: 33.3333%;
-  }
-}
+
 .card {
   background-color: white;
   border-radius: 0.25rem;
@@ -61,14 +52,10 @@ img {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  word-wrap: break-word;
+  white-space: initial;
 }
 
-.card-content {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  padding: 1rem;
-}
 .card-media {
   background-position: center center;
   background-repeat: no-repeat;
@@ -76,34 +63,48 @@ img {
   display: flex;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-
   overflow: hidden;
-  position: relative;
-  min-width: 20rem;
-  min-height: 10rem;
-  max-width: 160rem;
-  max-height: 90rem;
+  position: static;
 
-}
-.card-media::before {
-  content: "";
-  display: flex;
-  
+  width: 312px;
+  height: 175px;
 
 }
 
+.card-content {
+  display: grid;
+  height: 60%;
+  width: 100%; 
+
+  padding: 1rem;
+  grid-template-rows: 28% 12% auto 17%; 
+  grid-template-areas: "title" "rating" "meta" "button"
+}
 
 .card-title {
   font-size: 1.25rem;
+  word-wrap: break-word;
+  white-space: initial;
+  grid-area: title;
 }
+
+.card-rating {
+  grid-area: rating;
+}
+
+.card-button {
+  grid-area: button;
+}
+
+
 .card-text {
-  flex: 1 1 auto;
-  font-size: 0.875rem;
+  font-size: 0.618rem;
   line-height: 1.5;
-  margin-bottom: 1.25rem;
+  margin-top: 0.5rem;
   color: #696969;
   font-weight: 300;
   text-transform: uppercase;
+  grid-area: meta;
 }
 
 .meta-left {
@@ -112,6 +113,10 @@ img {
 
 .meta-right {
   grid-area: right;
+  justify-self: end;
+}
+.meta-center {
+  grid-area: center;
 }
 
 .text-container {
@@ -143,14 +148,14 @@ img {
 }
 
 .load-more{
-
   display: block;
-  border: 0;
+  border: 3px;
+  border-color: #002B56;
   margin: 1em auto;
   padding: .75em 1em;
   font-size: 1em;
   background-color: white;
-  color: navy;
+  color: #002B56;
   font-weight: 400;
   cursor: pointer;
 }
