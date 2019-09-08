@@ -24,28 +24,26 @@ export default function Dropdown({ ddList, ddHeader, ddOpen } : ddProps) {
   }
 
   const selectDdItem = (itemInd: number) => { // Change state to new list of DdItems with clicked item selected property changed to true
-    const tempList = [...ddList] // Stores previous values of state in copied list  
-    const newItem = tempList[itemInd] // Stores clicked item
-    const allFilter = tempList[0]; // Stores All filter to handle edge cases
+    const newList = [...ddList] // Stores previous values of state in copied list  
+    const newItem = newList[itemInd] // Stores clicked item
+    const allFilter = newList[0]; // Stores All filter to handle edge cases
 
-    //handle edge cases for "All" filter selected
+    // If the selected filter is not "All"
     if (itemInd > 0) {
       newItem.selected = !newItem.selected // Changes selected property on price to opposite value boolean
-      tempList[itemInd] = newItem; // Replace old DdItem with updated newItem
+      newList[itemInd] = newItem; // Replace old DdItem with updated newItem
       allFilter.selected = false; // Set the All filter selected property to false if any other item is selected
-      tempList[0] = allFilter; // Update list with new All filter
-
-      // update all filter if no items are selected
-      if(tempList.every((item: DdItem) => item.selected === false)) {
+      newList[0] = allFilter; // Update list with new All filter
+      
+      // Reset All filter if no items are selected
+      if(newList.every((item: DdItem) => item.selected === false)) {
         allFilter.selected = true; // Set the All filter selected property to true if no items are selected
-        tempList[0] = allFilter;
+        newList[0] = allFilter; // Update list with new All filter
       }
-      
-      
-      
+    // If the All filter is not currently slected and is clicked
     } else if (itemInd === 0 && !allFilter.selected) {  
       // If the All filter is slected while currently false, set all other item selected properties to false
-      tempList.forEach((item: DdItem, index: number) => {
+      newList.forEach((item: DdItem, index: number) => {
         if (index === 0) {
           item.selected = true; // Keep All filter true so it can only be made false by clicking another filter
         } else {
@@ -56,9 +54,9 @@ export default function Dropdown({ ddList, ddHeader, ddOpen } : ddProps) {
 
     // Dispatches actions to redux store based on which Dropdown is selected
     if (ddHeader === "Price") { 
-      dispatch(priceItemToggle(tempList));
+      dispatch(priceItemToggle(newList));
     } else if (ddHeader === "Categories") {
-      dispatch(catItemToggle(tempList));
+      dispatch(catItemToggle(newList));
     }
   }
 
@@ -78,7 +76,11 @@ export default function Dropdown({ ddList, ddHeader, ddOpen } : ddProps) {
           <ul className="dd-list">
             {
               ddList.map((listItem: DdItem, keyInd: number) => (
-                  <li className="dd-list-item" key={keyInd} onClick={() => selectDdItem(keyInd)}>{ listItem.selected ? <FontAwesomeIcon icon="check-circle" /> : null}{`  ${listItem.content}`}</li>
+                  <li 
+                    className="dd-list-item"
+                    key={keyInd}
+                    onClick={() => selectDdItem(keyInd)}
+                  >{ listItem.selected ? <FontAwesomeIcon icon="check-circle" /> : null}{`  ${listItem.content}`}</li>
                 )
               )
             }
