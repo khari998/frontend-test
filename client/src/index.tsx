@@ -24,10 +24,10 @@ import {
 } from './redux/reducers/reducers'
 import { exRestaurants } from './models/testdata'
 
-
+// const devUri = 'http://localhost:5000'; added for development
 
 const client = new ApolloClient({
-  uri: 'http://localhost:5000/graphql'
+  uri: '/graphql'
 })
 
 const allReducers = combineReducers({ // combines state from multiple reducers
