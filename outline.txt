@@ -49,9 +49,9 @@ Completed
     Style Loading circle/text
     Style text for no restaurants
     Make sure button onClicks go to the link as well
+  Separate client/server folders and dependencies
 
 Todo
-  Separate client/server folders and dependencies
     Update necessary paths
     Clean up dependencies
   Heroku Deploy
