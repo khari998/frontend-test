@@ -53,9 +53,9 @@ Completed
     Update necessary paths
     Clean up dependencies
   Account for multiple categories in Reviews
+  Heroku Deploy
 
 Todo
-  Heroku Deploy
   Unit Tests
   More Tests - Use Storybook https://storybook.js.org/
     Change unnecessary divs to Fragments for more performance
