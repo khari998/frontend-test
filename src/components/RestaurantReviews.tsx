@@ -44,7 +44,7 @@ export default function RestaurantReviews({ match }: any) { // id property is in
 
   const OutputMap = () => {
     return (
-      <div style={{ height: '100vw', width: '100vw' }}>
+      <div style={{ height: '30vw', width: '94.5vw' }}>
         <WrappedMap
           googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
           loadingElement={<div style={{ height: '100%' }} />}
@@ -57,29 +57,32 @@ export default function RestaurantReviews({ match }: any) { // id property is in
 
   return (
     <Fragment>
-      <h1 className="rest-rev-title">{selectedRest.title}</h1>
 
-      <div className="avg-rating-revs">
-        <StarRating rating={selectedRest.avg_rating}/>
-      </div>
+      <div className="rest-rev-container">
+        <h1 className="rest-rev-title">{selectedRest.title}</h1>
 
-      <div className="text-container">
-        <div className="meta-left">
+        <div className="rest-rev-avg-rating">
+          <StarRating rating={selectedRest.avg_rating}/>
+        </div>
+
+
+        <div className="rest-rev-meta-left">
           {`${selectedRest.category} · ${selectedRest.cost}`}
         </div>
-        <div className="meta-right">
-          {selectedRest.isOpen ? <FontAwesomeIcon icon="circle" color="green" /> : <FontAwesomeIcon icon="circle" color="red" />}
-          {selectedRest.isOpen ? '  OPEN NOW' : '  CLOSED'}
+        
+        <div className="rest-rev-meta-right">
+          {selectedRest.isOpen ? <FontAwesomeIcon icon="circle" color="#00E8A4" /> : <FontAwesomeIcon icon="circle" color="#FF3548" />}
+          {selectedRest.isOpen ? '  Open Now' : '  Closed'}
         </div>
       </div>
 
-      <div>
+      <div className="rest-rev-map">
         <OutputMap/>
+        <div className="rest-rev-address">
+          {selectedRest.location}
+        </div>
       </div>
 
-      <div>
-        { selectedRest.location }
-      </div>
       
       <div>
         {`${selectedRest.totReviews}  Reviews`}

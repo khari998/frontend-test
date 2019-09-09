@@ -37,16 +37,16 @@ Completed
     Make dropdown hover over content
     Get rid of Li bullet points
     Make dropdown 80 pixels with margin
-
-Todo
     Color disabled button outline 
     Align dropdown with margin
     Add underlines to boxes in dropdown
     Add dividers
       Color filter box border outline --bottom
     Justify buttons over center of grid
-    Style Reviews Page
     Adjust fonts and sizing
+
+Todo
+    Style Reviews Page
   Separate client/server folders and dependencies
     Update necessary paths
     Clean up dependencies

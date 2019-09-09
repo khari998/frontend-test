@@ -241,8 +241,6 @@ nav {
   position: relative;
 }
 
-
-
 .dd-header-title {
   margin-left:10px;
   display:block;
@@ -263,3 +261,60 @@ nav {
   border: 1px solid #002B56;
 }
 
+/* Reveiws Section */
+
+.rest-rev-title {
+  font: 'Helvetica Neue';
+  font-size: 54;
+  font-weight: 400;
+  margin: 15px 0px;
+  grid-area: title;
+  width:100%;
+}
+
+.rest-rev-avg-rating {
+  margin: 5px 0px;
+  width:100%;
+  grid-area: rating;
+}
+
+.rest-rev-container {
+  display: grid;
+  width:100%;
+  grid-template-areas: "title space space" "rating space space" "rev-meta-grid-left center rev-meta-grid-right";
+  grid-template-rows: auto auto auto;
+
+}
+
+.rest-rev-meta-left {
+  grid-area: rev-meta-grid-left;
+  font: 'Helvetica Neue';
+  margin: 20px 0px;
+  font-size: 22;
+  font-weight: 300;
+}
+
+.rest-rev-meta-right {
+  grid-area: rev-meta-grid-right;
+  justify-self: end;
+  margin: 20px 0px;
+  font: 'Helvetica Neue';
+  font-size: 22;
+  font-weight: 300;
+
+}
+
+.rest-rev-map {
+  margin: 20px 0px;
+  padding: 40px 0px;
+  width: auto;
+  border-bottom: 1px solid #C8C8C8;
+  border-top: 1px solid #C8C8C8;
+  justify-self: center;
+}
+
+.rest-rev-address{
+  margin-top: 20px;
+  font: 'Helvetica Neue';
+  font-size: 20;
+}
