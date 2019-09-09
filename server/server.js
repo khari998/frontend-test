@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require('express')
 const graphqlHTTP = require('express-graphql')
 const cors = require('cors')
+const path = require('path')
 
 const schema = require('./schema')
 
@@ -15,6 +16,12 @@ app.use('/graphql', graphqlHTTP({
   schema,
   graphiql: true,
 }))
+
+app.use(express.static('public/build'))
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '/build', 'index.html'))
+})
 
 const PORT = process.env.PORT || 5000
 

@@ -1,0 +1,425 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  background-color: white;
+}
+body {
+
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  background-color: white;
+  letter-spacing: 0;
+  padding: 0rem 2rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+nav {
+  position: absolute;
+}
+
+.load-spinner{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width:10rem;
+  margin-top: -50px;
+  margin-left: -100px;
+  grid-template-areas: "spinner" "loading-message"
+}
+
+.spinner{
+  grid-area:spinner; 
+  justify-self: center;
+}
+
+.loading{
+  font: 'Helvetica Neue';
+  font-size: 34px;
+  font-weight: 400;
+  grid-area:"loading-message";
+}
+
+.load-more{
+  display: block;
+  border: 1px solid #002B56;
+  margin: 1em auto;
+  padding: .75em 10em;
+  font: 'Helvetica Neue';
+  font-size: 14px;
+  background-color: white;
+  color: #002B56;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 2px;
+
+}
+
+.no-rests{
+  font-size: 25px;
+}
+
+.no-rests-text{
+  font: 'Helvetica Neue';
+  font-weight: 300;
+}
+
+
+.restaurants {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  /* margin-top: 10rem; */
+  padding: 0px;
+}
+
+.rest-sub-1 {
+  font: 'Helvetica Neue';
+  height: 70px;
+  font-size: 54px;
+  font-weight: 400;
+}
+
+.rest-sub2 {
+  font: 'Helvetica Neue';
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.rest-subtitle {
+  margin-top: 7rem;
+  font: 'Helvetica Neue';
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.card-item {
+  display: flex;
+  padding: 1rem;
+  max-width: 312px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: initial;
+  height: 428px;
+}
+
+.card-media {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  overflow: hidden;
+  position: static;
+
+  width: 312px;
+  height: 175px;
+
+}
+
+.card-content {
+  display: grid;
+  height: 60%;
+  width: 100%; 
+
+  padding: 1rem 0.1rem;
+  grid-template-rows: 28% 12% auto 17%; 
+  grid-template-areas: "title" "rating" "meta" "button"
+}
+
+.card-title {
+  font-size: 20px;
+  word-wrap: break-word;
+  white-space: initial;
+  grid-area: title;
+}
+
+.card-rating {
+  grid-area: rating;
+}
+
+.card-button {
+  grid-area: button;
+  background-color: #002B56;
+  border: 1px solid #002B56;
+  height: 3.3rem;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+
+.card-text {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  color: #696969;
+  font-weight: 300;
+  text-transform: uppercase;
+  grid-area: meta;
+}
+
+.meta-left {
+  grid-area: left;
+}
+
+.meta-right {
+  grid-area: right;
+  justify-self: end;
+}
+.meta-center {
+  grid-area: center;
+}
+
+.text-container {
+  display: grid;
+  grid-template-columns: 40% auto 40%;
+  grid-template-areas: "left center right"
+}
+
+.dd-container {
+  display: grid;
+  height: 80px;
+  justify-self: center;
+  border-bottom: 1px solid #C8C8C8;
+  border-top: 1px solid #C8C8C8;
+
+  /* overflow: hidden; */
+  grid-template-columns: 8% 14% 12% 18% auto 10%;
+  grid-template-areas: "filter open dd1 dd2 space button"
+}
+
+.dd-filter {
+  grid-area: filter;
+  margin-top: 22.5px;
+  margin-bottom: 22.5px;;
+}
+.dd-open {
+  grid-area: open;
+  height:25px;
+  margin-top: 22.5px;
+  margin-bottom: 22.5px;
+  border-bottom: 1px solid #C8C8C8;
+  color: #002B56;
+}
+.dd-dd1 {
+  grid-area: dd1;
+  margin-top: 22.5px;
+  margin-bottom: 22.5px;
+}
+.dd-dd2 {
+  grid-area: dd2;
+  margin-top:22.5px;
+  margin-bottom: 22.5px;
+}
+.dd-button {
+  grid-area: button;
+  margin-top:21px;
+  margin-bottom: 21px;
+  justify-self: end;
+  background-color: transparent;
+}
+
+.dd-btn{
+  display: block;
+  width: 100%;
+  padding: 0px 1rem;
+  height: 38px;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 0px;
+}
+
+.dd-btn:disabled{
+  border: 1px solid #E6E6E6;
+  color: #C8C8C8;
+}
+
+.dd-btn:enabled{
+  border: 1px solid #002B56;
+  color: #002B56;
+}
+
+.dd-container-wrapper {
+  width: 100%;
+  height: 1rem;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.dd-list, .dd-header-title .dd-header {
+  width: 95%;
+  height: 100%;
+  position: relative;
+}
+
+.dd-header-title {
+  margin-left:10px;
+  display:block;
+  height:25px;
+  color: #002B56;
+  border-bottom: 1px solid #C8C8C8;
+}
+
+.dd-list{
+  z-index: 40;
+  margin-left: 10px;
+  background-color: white;
+  display:block;
+  overflow: visible;
+  text-overflow: ellipsis;
+  height: 100%;
+  padding: 5px; 
+  border: 1px solid #002B56;
+}
+
+/* Restaurant Reveiw Data */
+
+.rest-rev-title {
+  font: 'Helvetica Neue';
+  font-size: 54px;
+  font-weight: 400;
+  margin: 15px 0px;
+  grid-area: title;
+  width:100%;
+}
+
+.rest-rev-avg-rating {
+  margin: 5px 0px;
+  height: 30px;
+  width:100%;
+  grid-area: rating;
+}
+
+.rest-rev-container {
+  display: grid;
+  width:100%;
+  grid-template-areas: "title space space" "rating space space" "rev-meta-grid-left center rev-meta-grid-right";
+  grid-template-rows: auto auto auto;
+  
+}
+
+.rest-rev-meta-left {
+  grid-area: rev-meta-grid-left;
+  font: 'Helvetica Neue';
+  margin: 20px 0px;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.rest-rev-meta-right {
+  grid-area: rev-meta-grid-right;
+  justify-self: end;
+  margin: 20px 0px;
+  font: 'Helvetica Neue';
+  font-size: 22px;
+  font-weight: 300;
+
+}
+
+.rest-rev-map {
+  margin: 20px 0px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  width: auto;
+  border-bottom: 1px solid #C8C8C8;
+  border-top: 1px solid #C8C8C8;
+  justify-self: center;
+}
+
+.rest-rev-address{
+  margin-top: 20px;
+  font: 'Helvetica Neue';
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.rest-rev-num-revs{
+  margin: 20px 0px;
+  font: 'Helvetica Neue';
+  font-weight: 300;
+  font-size: 22px;
+}
+
+/* Reveiw Data */
+
+.rev-container {
+  display: grid;
+  width:100%;
+  grid-template-areas: "picture name-date review-rating";
+  grid-template-rows: 10% 20% 70%;
+  margin-bottom: 4.5rem;
+  padding-bottom: 4.5rem;
+  border-bottom: 1px solid #C8C8C8;
+}
+
+.rev-img{
+  grid-area: picture;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  overflow: hidden;
+  position: static;
+  margin: 0px 10px;
+  width: 80px;
+  height: 80px;
+  
+}
+.rev-meta{
+  grid-area: name-date;
+  margin: 0px 10px;
+}
+.rev-rating-text{
+  grid-area: review-rating;
+  margin: 0px 10px;
+  
+}
+
+.rev-name {
+  margin: 10px 0px;
+  font: 'Helvetica Neue';
+  font-weight: 400;
+  font-size: 22px;
+}
+.rev-date {
+  margin: 10px 0px;
+  font: 'Helvetica Neue';
+  font-weight: 300;
+  font-size: 16px;
+}
+.rev-rating {
+  margin: 10px 0px;
+  font: 'Helvetica Neue';
+  font-weight: 300;
+
+}
+.rev-text {
+  margin: 10px 0px;
+  font: 'Helvetica Neue';
+  font-weight: 300;
+  font-size: 20px;
+}

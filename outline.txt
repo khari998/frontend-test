@@ -52,12 +52,13 @@ Completed
   Separate client/server folders and dependencies
     Update necessary paths
     Clean up dependencies
+  Account for multiple categories in Reviews
 
 Todo
   Heroku Deploy
   Unit Tests
   More Tests - Use Storybook https://storybook.js.org/
-    Change all divs to Fragments for more performance
+    Change unnecessary divs to Fragments for more performance
     Convert functions to arrow syntax
   Make Responsive -- Web-Mobile
   Documentation -- Include Conclusion with optimizations
