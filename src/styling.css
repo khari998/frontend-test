@@ -261,7 +261,7 @@ nav {
   border: 1px solid #002B56;
 }
 
-/* Reveiws Section */
+/* Restaurant Reveiw Data */
 
 .rest-rev-title {
   font: 'Helvetica Neue';
@@ -283,7 +283,7 @@ nav {
   width:100%;
   grid-template-areas: "title space space" "rating space space" "rev-meta-grid-left center rev-meta-grid-right";
   grid-template-rows: auto auto auto;
-
+  
 }
 
 .rest-rev-meta-left {
@@ -326,4 +326,66 @@ nav {
   font: 'Helvetica Neue';
   font-weight: 300;
   font-size: 22;
+}
+
+/* Reveiw Data */
+
+.rev-container {
+  display: grid;
+  width:100%;
+  grid-template-areas: "picture name-date review-rating";
+  grid-template-rows: 10% 20% 70%;
+  margin-bottom: 4.5rem;
+  padding-bottom: 4.5rem;
+  border-bottom: 1px solid #C8C8C8;
+}
+
+.rev-img{
+  grid-area: picture;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  overflow: hidden;
+  position: static;
+  margin: 0px 10px;
+  width: 80px;
+  height: 80px;
+  
+}
+.rev-meta{
+  grid-area: name-date;
+  margin: 0px 10px;
+}
+.rev-rating-text{
+  grid-area: review-rating;
+  margin: 0px 10px;
+  
+}
+
+.rev-name {
+  margin: 10px 0px;
+  font: 'Helvetica Neue';
+  font-weight: 400;
+  font-size: 22;
+}
+.rev-date {
+  margin: 10px 0px;
+  font: 'Helvetica Neue';
+  font-weight: 300;
+  font-size: 16;
+}
+.rev-rating {
+  margin: 10px 0px;
+  font: 'Helvetica Neue';
+  font-weight: 300;
+  height: 20px;
+}
+.rev-text {
+  margin: 10px 0px;
+  font: 'Helvetica Neue';
+  font-weight: 300;
+  font-size: 20;
 }

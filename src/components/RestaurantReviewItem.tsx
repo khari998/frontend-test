@@ -13,7 +13,7 @@ export default function RestaurantReviewItem({ review } : reviewsProp) {
   
 
   return (
-    <div>
+    <div className="rev-container">
       <div className="rev-img">
         <img src={review.image} />
       </div>
@@ -28,8 +28,8 @@ export default function RestaurantReviewItem({ review } : reviewsProp) {
         </div>
       </div>
 
-      <div>
-        <div className="rating">
+      <div className="rev-rating-text">
+        <div className="rev-rating">
           <StarRating rating={ review.rating }/>
         </div>
 
