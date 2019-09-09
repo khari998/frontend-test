@@ -1,15 +1,25 @@
 import * as React from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Restaurant } from '../models/models'
 import StarRating from './StarRating'
+import { Redirect } from 'react-router-dom';
+
 
 interface rListItemProps {
   R: Restaurant,
 }
 
-export default function RestaurantItem({ R }: rListItemProps) {
-  return (
+export default function RestaurantItem ({ R }: rListItemProps,) {
+  
+  const [clicked, changeClick] = useState(false)
+
+  const learnMoreClicked = () => {
+    changeClick(true);
+  }
+
+  return (clicked) ? <Redirect to={`/reviews/${R.resId}`}></Redirect> : (
     <li className="card-item">
       <div className="card">
 
@@ -40,7 +50,7 @@ export default function RestaurantItem({ R }: rListItemProps) {
             </div>
           </div>
 
-          <button className="card-button btn-block" onClick={() => {}}> 
+          <button className="card-button btn-block" onClick={() => learnMoreClicked()}> 
             <Link to={`/reviews/${R.resId}`} style={{ color: '#FFF' }}>LEARN MORE</Link>
           </button>
         
@@ -49,3 +59,4 @@ export default function RestaurantItem({ R }: rListItemProps) {
     </li>
   )
 }
+

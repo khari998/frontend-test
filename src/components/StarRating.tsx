@@ -11,7 +11,6 @@ export default function StarRating({ rating, size }: ratingProp) {
   if (!size) {
     size = '1x';
   }
-  console.log(size)
   // Builds array of star icons according to rating
   const starArr: any = []; // Assigned to type any due to issue with FontAwesomeIcon type
   for (let i = 0; i < 5; i++) { // Always gives 5 stars, uses i for unique key
