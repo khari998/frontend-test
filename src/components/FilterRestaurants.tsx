@@ -87,8 +87,8 @@ export default function FilterRestaurants() {
 
         <div className="dd-button" >
           {
-            enabled ? <button className="brick" onClick={clearAll}> CLEAR ALL </button> :
-              <button className="brick" disabled onClick={clearAll}> CLEAR ALL </button>
+            enabled ? <button className="dd-btn" onClick={clearAll}> CLEAR ALL </button> :
+              <button className="dd-btn" disabled onClick={clearAll}> CLEAR ALL </button>
           }
         </div>
 

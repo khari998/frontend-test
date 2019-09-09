@@ -11,8 +11,9 @@ body {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
+  background-color: white;
   letter-spacing: 0;
-  padding: 1rem;
+  padding: 0rem 2rem;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,18 +29,6 @@ nav {
   position: absolute;
 }
 
-.btn-block {
-  display: block;
-  width: 100%;
-}
-
-.brick{
-  /* display: block;
-  width: 100%;
-  padding: 1em auto; */
-  border: 1px solid #002B56;
-  height: 22px;
-}
 
 .load-more{
   display: block;
@@ -59,8 +48,30 @@ nav {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  margin-top: 5rem;
+  justify-content: center;
+  /* margin-top: 10rem; */
+  padding: 0px;
 }
+
+.rest-sub-1 {
+  font: 'Helvetica Neue';
+  font-size: 54;
+  font-weight: 400;
+}
+
+.rest-sub2 {
+  font: 'Helvetica Neue';
+  font-size: 22;
+  font-weight: 300;
+}
+
+.rest-subtitle {
+  margin-top: 7rem;
+  font: 'Helvetica Neue';
+  font-size: 34;
+  font-weight: 400;
+}
+
 .card-item {
   display: flex;
   padding: 1rem;
@@ -76,6 +87,7 @@ nav {
   overflow: hidden;
   word-wrap: break-word;
   white-space: initial;
+  height: 428px;
 }
 
 .card-media {
@@ -98,7 +110,7 @@ nav {
   height: 60%;
   width: 100%; 
 
-  padding: 1rem;
+  padding: 1rem 0.1rem;
   grid-template-rows: 28% 12% auto 17%; 
   grid-template-areas: "title" "rating" "meta" "button"
 }
@@ -118,13 +130,13 @@ nav {
   grid-area: button;
   background-color: #002B56;
   border: 1px solid #002B56;
-  padding: 0.5rem;
+  height: 3.3rem;
   border-radius: 2px;
 }
 
 
 .card-text {
-  font-size: 0.618rem;
+  font-size: 12px;
   line-height: 1.5;
   margin-top: 0.5rem;
   color: #696969;
@@ -153,8 +165,11 @@ nav {
 
 .dd-container {
   display: grid;
-  height: 100%;
+  height: 80px;
   justify-self: center;
+  border-bottom: 1px solid #C8C8C8;
+  border-top: 1px solid #C8C8C8;
+
   /* overflow: hidden; */
   grid-template-columns: 8% 14% 12% 18% auto 10%;
   grid-template-areas: "filter open dd1 dd2 space button"
@@ -162,62 +177,61 @@ nav {
 
 .dd-filter {
   grid-area: filter;
-  margin-top:29px;
-  margin-bottom: 29px;
+  margin-top: 22.5px;
+  margin-bottom: 22.5px;;
 }
 .dd-open {
   grid-area: open;
-  margin-top:29px;
-  margin-bottom: 29px;
-  border-bottom: 1px solid #002B56;
+  height:25px;
+  margin-top: 22.5px;
+  margin-bottom: 22.5px;
+  border-bottom: 1px solid #C8C8C8;
+  color: #002B56;
 }
 .dd-dd1 {
   grid-area: dd1;
-  margin-top:29px;
-  margin-bottom: 29px;
+  margin-top: 22.5px;
+  margin-bottom: 22.5px;
 }
 .dd-dd2 {
   grid-area: dd2;
-  margin-top:29px;
-  margin-bottom: 29px;
+  margin-top:22.5px;
+  margin-bottom: 22.5px;
 }
 .dd-button {
   grid-area: button;
-  margin-top:29px;
-  margin-bottom: 29px;
+  margin-top:21px;
+  margin-bottom: 21px;
   justify-self: end;
+  background-color: transparent;
+  font-size: 1em;
 }
 
-.dd-button:disabled{
+.dd-btn{
   display: block;
-  border: 1px solid #E6E6E6;
-  margin: 1em auto;
-  padding: 0.5rem;
-  font-size: 1em;
-  background-color: white;
-  color: #C8C8C8;
+  width: 100%;
+  padding: 0px 1rem;
+  height: 38px;
+  font-size: 12px;
   font-weight: 400;
   cursor: pointer;
   border-radius: 0px;
 }
 
-.dd-button:enabled{
-  display: block;
+.dd-btn:disabled{
+  border: 1px solid #E6E6E6;
+  color: #C8C8C8;
+}
+
+.dd-btn:enabled{
   border: 1px solid #002B56;
-  margin: 1em auto;
-  padding: 0.5rem;
-  font-size: 1em;
-  background-color: white;
   color: #002B56;
-  font-weight: 400;
-  cursor: pointer;
-  border-radius: 2px;
 }
 
 .dd-container-wrapper {
   width: 100%;
   height: 1rem;
-  margin: 10px;
+  margin-bottom: 10px;
   position: relative;
 }
 
@@ -225,7 +239,6 @@ nav {
   width: 95%;
   height: 100%;
   position: relative;
-
 }
 
 
@@ -233,7 +246,9 @@ nav {
 .dd-header-title {
   margin-left:10px;
   display:block;
-  border-bottom: 1px solid #002B56;
+  height:25px;
+  color: #002B56;
+  border-bottom: 1px solid #C8C8C8;
 }
 
 .dd-list{

@@ -66,7 +66,7 @@ export default function Dropdown({ ddList, ddHeader, ddOpen } : ddProps) {
 
           <div className="dd-header-title" onClick={openDD}>
             { `${ddHeader}  `}
-            { ddOpen ? <FontAwesomeIcon icon="angle-up"/> : <FontAwesomeIcon icon="angle-down"/> }
+        {ddOpen ? <FontAwesomeIcon icon="angle-up" color="#C8C8C8" /> : <FontAwesomeIcon icon="angle-down" color="#C8C8C8"/>}
           </div>
           
           {

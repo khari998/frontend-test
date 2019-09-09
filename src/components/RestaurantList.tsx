@@ -44,6 +44,7 @@ export default function RestaurantList() {
 
   return (
     <div>
+      <h1 className="rest-subtitle">All Restaurants</h1>
       <ul className="restaurants">
         { 
           rList.length ? 

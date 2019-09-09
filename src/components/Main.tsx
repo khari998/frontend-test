@@ -77,8 +77,9 @@ export default function Main(): JSX.Element {
         }
       </Query> */}
 
-      <h1>Restaurants</h1>
-      <p>Browse through a curated list of your favorite restaurants</p>
+      <h1 className="rest-sub-1">Restaurants</h1>
+      <p className="rest-sub2"
+      >Browse through a curated list of your favorite restaurants</p>
       <FilterRestaurants />
       <RestaurantList />
     </Fragment>
