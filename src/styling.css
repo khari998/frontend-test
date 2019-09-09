@@ -34,8 +34,9 @@ nav {
   display: block;
   border: 1px solid #002B56;
   margin: 1em auto;
-  padding: .75em 1em;
-  font-size: 1em;
+  padding: .75em 10em;
+  font: 'Helvetica Neue';
+  font-size: 14px;
   background-color: white;
   color: #002B56;
   font-weight: 400;
@@ -133,6 +134,7 @@ nav {
   border: 1px solid #002B56;
   height: 3.3rem;
   border-radius: 2px;
+  font-size: 14px;
 }
 
 

@@ -61,7 +61,7 @@ export const catFilterReducer = (state = false, action: any) => {
   }
 }
 
-export const loadMoreReducer = (state = 10, action: any) => {
+export const loadMoreReducer = (state = 8, action: any) => {
   switch (action.type) {
     case "UPDATEVISIBLE":
       return state + action.payload;
