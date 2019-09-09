@@ -20,10 +20,10 @@ export default function Main(): JSX.Element {
         {
           ({ loading, error, data } : any) => {
             if (loading) { // Loads spinner while data is being fetched
-              return  <Fragment>
-                        <Spinner size={120} spinnerColor={"#333"} spinnerWidth={2} visible={true}/> 
-                        <h1>... Loading, Please Wait</h1>
-                      </Fragment>
+              return  <div className="load-spinner">
+                        <Spinner size={120} className="spinner" spinnerColor={"#333"} spinnerWidth={2} visible={true}/>
+                        <h1 className="loading">... Loading, Please Wait</h1>
+                      </div>
             }
             
             if (error) { 
@@ -77,6 +77,11 @@ export default function Main(): JSX.Element {
         }
       </Query> */}
 
+
+      {/* <div className="load-spinner">
+        <Spinner className="spinner" size={120} spinnerColor={"#333"} spinnerWidth={2} visible={true} />
+        <h1 className="loading">... Loading, Please Wait</h1>
+      </div> */}
       <h1 className="rest-sub-1">Restaurants</h1>
       <p className="rest-sub2"
       >Browse through a curated list of your favorite restaurants</p>

@@ -44,9 +44,14 @@ Completed
       Color filter box border outline --bottom
     Justify buttons over center of grid
     Adjust fonts and sizing
+    Style Reviews Page
+    Style Load More button
 
 Todo
-    Style Reviews Page
+
+    Style Loading circle/text
+    Style text for no restaurants
+    Make sure button onClicks go to the link as well
   Separate client/server folders and dependencies
     Update necessary paths
     Clean up dependencies
