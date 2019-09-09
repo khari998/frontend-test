@@ -84,7 +84,7 @@ export default function RestaurantReviews({ match }: any) { // id property is in
       </div>
 
       
-      <div>
+      <div className="rest-rev-num-revs">
         {`${selectedRest.totReviews}  Reviews`}
       </div>
 

@@ -306,7 +306,8 @@ nav {
 
 .rest-rev-map {
   margin: 20px 0px;
-  padding: 40px 0px;
+  padding-top: 40px;
+  padding-bottom: 20px;
   width: auto;
   border-bottom: 1px solid #C8C8C8;
   border-top: 1px solid #C8C8C8;
@@ -316,5 +317,13 @@ nav {
 .rest-rev-address{
   margin-top: 20px;
   font: 'Helvetica Neue';
+  font-weight: 300;
   font-size: 20;
+}
+
+.rest-rev-num-revs{
+  margin: 20px 0px;
+  font: 'Helvetica Neue';
+  font-weight: 300;
+  font-size: 22;
 }
