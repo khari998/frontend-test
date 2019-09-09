@@ -46,11 +46,11 @@ Completed
     Adjust fonts and sizing
     Style Reviews Page
     Style Load More button
+    Style Loading circle/text
+    Style text for no restaurants
 
 Todo
 
-    Style Loading circle/text
-    Style text for no restaurants
     Make sure button onClicks go to the link as well
   Separate client/server folders and dependencies
     Update necessary paths

@@ -66,6 +66,16 @@ nav {
 
 }
 
+.no-rests{
+  font-size: 25px;
+}
+
+.no-rests-text{
+  font: 'Helvetica Neue';
+  font-weight: 300;
+}
+
+
 .restaurants {
   display: flex;
   flex-wrap: wrap;
