@@ -18,6 +18,8 @@ import StarRating from './StarRating';
 
 export default function RestaurantReviews({ match }: any) { // id property is initialized after initial params so any type is used
 
+  const starSize = '2x'; // Sizing for avg_rating stars
+  
   // Access restaurant that was clicked by matching the id property to the restaruant held in state
   const selectedRest: Restaurant = useSelector((state: any) => state.restaurants).filter((rest: Restaurant) => rest.resId === match.params.id)[0]
   
@@ -62,7 +64,7 @@ export default function RestaurantReviews({ match }: any) { // id property is in
         <h1 className="rest-rev-title">{selectedRest.title}</h1>
 
         <div className="rest-rev-avg-rating">
-          <StarRating rating={selectedRest.avg_rating}/>
+          <StarRating rating={selectedRest.avg_rating} size={starSize}/>
         </div>
 
 

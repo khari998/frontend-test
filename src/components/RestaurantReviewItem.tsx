@@ -11,7 +11,7 @@ interface reviewsProp {
 
 export default function RestaurantReviewItem({ review } : reviewsProp) {
   
-
+  const size: string = 'lg';
   return (
     <div className="rev-container">
       <div className="rev-img">
@@ -30,7 +30,7 @@ export default function RestaurantReviewItem({ review } : reviewsProp) {
 
       <div className="rev-rating-text">
         <div className="rev-rating">
-          <StarRating rating={ review.rating }/>
+          <StarRating rating={ review.rating } />
         </div>
 
         <div className="rev-text">
