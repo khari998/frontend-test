@@ -16,7 +16,7 @@ export default function Main(): JSX.Element {
   
   return (
     <Fragment>
-      {/* <Query query={RestaurantQuery}> 
+      <Query query={RestaurantQuery}> 
         {
           ({ loading, error, data } : any) => {
             if (loading) { // Loads spinner while data is being fetched
@@ -75,18 +75,18 @@ export default function Main(): JSX.Element {
                   </Fragment>
           }
         }
-      </Query> */}
+      </Query>
 
 
-      {/* <div className="load-spinner">
-        <Spinner className="spinner" size={120} spinnerColor={"#333"} spinnerWidth={2} visible={true} />
-        <h1 className="loading">... Loading, Please Wait</h1>
-      </div> */}
+      {/* If API Key breaks, render this instead
+      
       <h1 className="rest-sub-1">Restaurants</h1>
       <p className="rest-sub2"
       >Browse through a curated list of your favorite restaurants</p>
       <FilterRestaurants />
-      <RestaurantList />
+      <RestaurantList /> 
+      
+      */}
     </Fragment>
   )
 }

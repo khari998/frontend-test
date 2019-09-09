@@ -50,10 +50,10 @@ Completed
     Style text for no restaurants
     Make sure button onClicks go to the link as well
   Separate client/server folders and dependencies
-
-Todo
     Update necessary paths
     Clean up dependencies
+
+Todo
   Heroku Deploy
   Unit Tests
   More Tests - Use Storybook https://storybook.js.org/

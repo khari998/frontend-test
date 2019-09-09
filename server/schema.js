@@ -22,6 +22,7 @@ const yelpGraphQL = axios.create({
   }
 });
 
+
 // GraphQL Schema for data from Yelp API
 
 const RestaurantType = new GraphQLObjectType({
@@ -99,9 +100,7 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) { // Resolve Yelp data for querying
         return yelpGraphQL
           .post("", { query: restQL })
-          .then(result => {
-            console.log(result.data.data.search.business.data);
-            return result.data.data.search.business})
+          .then(result => result.data.data.search.business)
           .catch(err => console.log("There was an error", err));
       },
     }

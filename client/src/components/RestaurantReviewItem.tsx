@@ -33,9 +33,9 @@ export default function RestaurantReviewItem({ review } : reviewsProp) {
           <StarRating rating={ review.rating } />
         </div>
 
-        <div className="rev-text">
+        <p className="rev-text">
           { review.review }
-        </div>
+        </p>
       </div>
     </div>
   )
