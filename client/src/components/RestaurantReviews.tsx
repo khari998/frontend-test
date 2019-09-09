@@ -68,7 +68,7 @@ export default function RestaurantReviews({ match }: any) { // id property is in
 
 
         <div className="rest-rev-meta-left">
-          {`${selectedRest.category} · ${selectedRest.cost}`}
+          {`${selectedRest.category.reduce((newStr: string, cat: string, ind: number, arr: string[]) => ind !== arr.length - 1 ? newStr.concat(`${cat}, `) : newStr.concat(`${cat} `), '')} · ${selectedRest.cost}`}
         </div>
         
         <div className="rest-rev-meta-right">
