@@ -23,7 +23,7 @@ export default function RestaurantReviewItem({ review } : reviewsProp) {
           { review.name }
         </div>
         <div className="rev-date">
-          <Moment date={review.date}></Moment>
+          <Moment date={review.date} format="MM/DD/YYYY"></Moment>
         </div>
       </div>
 

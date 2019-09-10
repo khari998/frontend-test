@@ -55,8 +55,8 @@ Completed
   Account for multiple categories in Reviews
   Heroku Deploy
   Fix format spacing on reviews page
-  Fix date format on reviews page
   Serve static asset to production build
+  Fix date format on reviews page
 
 Todo
   Unit Tests
