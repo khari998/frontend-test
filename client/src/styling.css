@@ -34,7 +34,8 @@ nav {
 }
 
 .opening-par{
-  margin: 10px 0px;
+  margin-top: 10px;
+  margin-bottom: 30px;
   font: 'Helvetica Neue';
   font-weight: 300;
   font-size: 22px;
