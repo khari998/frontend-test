@@ -1,3 +1,6 @@
+import * as css from './styling.css'
+// import * as MapMarker from './assets/MapMarker.png'
+
 import * as React from 'react'
 import { render } from 'react-dom'
 import { combineReducers, createStore } from 'redux'
@@ -24,10 +27,10 @@ import {
 } from './redux/reducers/reducers'
 import { exRestaurants } from './models/testdata'
 
-// const devUri = 'http://localhost:5000'; added for development
-
+const devUri = 'http://localhost:5000/graphql'; // use for development
+const prodUri = '/graphql'
 const client = new ApolloClient({
-  uri: '/graphql'
+  uri: devUri 
 })
 
 const allReducers = combineReducers({ // combines state from multiple reducers

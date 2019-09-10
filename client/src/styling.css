@@ -1,13 +1,10 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+
 html {
   background-color: white;
 }
 body {
-
+  
+  box-sizing: border-box;
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -368,17 +365,24 @@ nav {
   display: grid;
   width:100%;
   grid-template-areas: "picture name-date review-rating";
-  grid-template-rows: 10% 20% 70%;
+  grid-template-columns: 10% 20% 70%;
   margin-bottom: 4.5rem;
   padding-bottom: 4.5rem;
   border-bottom: 1px solid #C8C8C8;
 }
 
+.rev-img-container{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 144px;
+}
+
 .rev-img{
   grid-area: picture;
   background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-repeat: no-repeat;
+  background-size: cover; */
   display: flex;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;

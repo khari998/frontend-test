@@ -11,11 +11,11 @@ interface reviewsProp {
 
 export default function RestaurantReviewItem({ review } : reviewsProp) {
   
-  const size: string = 'lg';
   return (
     <div className="rev-container">
-      <div className="rev-img">
-        <img src={review.image} />
+
+      <div className="rev-img-container">
+        <img src={review.image} className="rev-img"/>
       </div>
 
       <div className="rev-meta">
@@ -24,7 +24,6 @@ export default function RestaurantReviewItem({ review } : reviewsProp) {
         </div>
         <div className="rev-date">
           { review.date }
-
         </div>
       </div>
 
