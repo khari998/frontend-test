@@ -83,7 +83,7 @@ nav {
   font: 'Helvetica Neue';
   height: 70px;
   font-size: 54px;
-  font-weight: 400;
+  font-weight: 300;
   margin: 10px 0px;
 }
 
@@ -99,7 +99,7 @@ nav {
   margin-top: 7rem;
   font: 'Helvetica Neue';
   font-size: 34px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .card-item {
@@ -300,7 +300,7 @@ nav {
 .rest-rev-title {
   font: 'Helvetica Neue';
   font-size: 54px;
-  font-weight: 400;
+  font-weight: 300;
   margin: 15px 0px;
   grid-area: title;
   width:100%;
