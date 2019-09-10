@@ -1,21 +1,14 @@
-
-
 import * as React from 'react'
-import * as moment from 'moment'
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Query } from 'react-apollo'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-maps'
-
 
 import { Restaurant, Review } from '../models/models'
 import { Fragment } from 'react';
 import RestaurantReviewItem from './RestaurantReviewItem';
 import StarRating from './StarRating';
 
-
-
-export default function RestaurantReviews({ match }: any) { // id property is initialized after initial params so any type is used
+const RestaurantReviews = ({ match }: any) => { // id property is initialized after initial params so any type is used
 
   const starSize = '2x'; // Sizing for avg_rating stars
   
@@ -24,8 +17,8 @@ export default function RestaurantReviews({ match }: any) { // id property is in
   
   const restPosition = { lat: selectedRest.coordinates[0], lng: selectedRest.coordinates[1] }
 
-  const Map = () => {
-    return (
+  // Map component must be made here to gain acces to params on Restaurant provided by match
+  const Map = () => (
       <GoogleMap
         defaultZoom={18}
         defaultCenter={restPosition}
@@ -39,12 +32,12 @@ export default function RestaurantReviews({ match }: any) { // id property is in
         ></Marker>
       </GoogleMap>
     )
-  }
-
+  
+  // Map must be wrapped with withScriptjs
   const WrappedMap = withScriptjs(withGoogleMap(Map))
-
-  const OutputMap = () => {
-    return (
+  
+  // Final output map
+  const OutputMap = () => (
       <div style={{ height: '30vw', width: '94.5vw' }}>
         <WrappedMap
           googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
@@ -54,7 +47,6 @@ export default function RestaurantReviews({ match }: any) { // id property is in
         />
       </div>
     )
-  }
 
   return (
     <Fragment>
@@ -89,11 +81,12 @@ export default function RestaurantReviews({ match }: any) { // id property is in
         {`${selectedRest.totReviews}  Reviews`}
       </div>
 
-      <div>
+      <Fragment>
         {selectedRest.reviews.map((review: Review) => <RestaurantReviewItem review={review} key={review.revId} />)}
-      </div>
+      </Fragment>
       
     </Fragment>
   )
 }
 
+export default RestaurantReviews;

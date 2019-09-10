@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { priceDDToggle, catDDToggle, catItemToggle, priceItemToggle } from '../redux/actions/actions';
 
 import { DdItem } from '../models/models';
@@ -11,7 +11,7 @@ interface ddProps { // Defines types for destructured props
   ddOpen: boolean,
 }
 
-export default function Dropdown({ ddList, ddHeader, ddOpen } : ddProps) {
+const Dropdown = ({ ddList, ddHeader, ddOpen } : ddProps) => {
 
   const dispatch = useDispatch(); // Allows actions to be dispatched to store
 
@@ -61,30 +61,31 @@ export default function Dropdown({ ddList, ddHeader, ddOpen } : ddProps) {
   }
 
   return (
+    <div className="dd-header" >
 
-        <div className="dd-header" >
-
-          <div className="dd-header-title" onClick={openDD}>
-            { `${ddHeader}  `}
+      <div className="dd-header-title" onClick={openDD}>
+        { `${ddHeader}  `}
         {ddOpen ? <FontAwesomeIcon icon="angle-up" color="#C8C8C8" /> : <FontAwesomeIcon icon="angle-down" color="#C8C8C8"/>}
-          </div>
-          
+      </div>
+      
+      {
+        ddOpen &&
+        <ul className="dd-list">
           {
-            ddOpen &&
-            <ul className="dd-list">
-              {
-                ddList.map((listItem: DdItem, keyInd: number) => (
-                    <div
-                      className="dd-list-item"
-                      key={keyInd}
-                      onClick={() => selectDdItem(keyInd)}
-                  >{listItem.selected ? <FontAwesomeIcon icon="check-circle" color="#002B56" /> : <FontAwesomeIcon icon={['far', 'circle']} color="#002B56"/>}{`  ${listItem.content}`}</div>
-                  )
-                )
-              }
-            </ul>
+            ddList.map((listItem: DdItem, keyInd: number) => (
+                <div
+                  className="dd-list-item"
+                  key={keyInd}
+                  onClick={() => selectDdItem(keyInd)}
+              >{listItem.selected ? <FontAwesomeIcon icon="check-circle" color="#002B56" /> : <FontAwesomeIcon icon={['far', 'circle']} color="#002B56"/>}{`  ${listItem.content}`}</div>
+              )
+            )
           }
+        </ul>
+      }
 
-        </div>
+    </div>
   )
 }
+
+export default Dropdown

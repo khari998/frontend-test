@@ -3,7 +3,6 @@ html {
   background-color: white;
 }
 body {
-  
   box-sizing: border-box;
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: normal;
@@ -26,22 +25,7 @@ nav {
   position: absolute;
 }
 
-.opening-title{
-  margin: 10px 0px;
-  font: 'Helvetica Neue';
-  font-weight: 400;
-  font-size: 54px;
-}
-
-.opening-par{
-  margin-top: 10px;
-  margin-bottom: 30px;
-  font: 'Helvetica Neue';
-  font-weight: 300;
-  font-size: 22px;
-}
-
-.load-spinner{
+.load-spinner {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -51,19 +35,19 @@ nav {
   grid-template-areas: "spinner" "loading-message"
 }
 
-.spinner{
+.spinner {
   grid-area:spinner; 
   justify-self: center;
 }
 
-.loading{
+.loading {
   font: 'Helvetica Neue';
   font-size: 34px;
   font-weight: 400;
   grid-area:"loading-message";
 }
 
-.load-more{
+.load-more {
   display: block;
   border: 1px solid #002B56;
   margin: 1em auto;
@@ -78,22 +62,20 @@ nav {
 
 }
 
-.no-rests{
+.no-rests {
   font-size: 25px;
 }
 
-.no-rests-text{
+.no-rests-text {
   font: 'Helvetica Neue';
   font-weight: 300;
 }
-
 
 .restaurants {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   justify-content: center;
-  /* margin-top: 10rem; */
   padding: 0px;
 }
 
@@ -102,10 +84,13 @@ nav {
   height: 70px;
   font-size: 54px;
   font-weight: 400;
+  margin: 10px 0px;
 }
 
 .rest-sub2 {
   font: 'Helvetica Neue';
+  margin-top: 10px;
+  margin-bottom: 30px;
   font-size: 22px;
   font-weight: 300;
 }
@@ -256,7 +241,7 @@ nav {
   background-color: transparent;
 }
 
-.dd-btn{
+.dd-btn {
   display: block;
   width: 100%;
   padding: 0px 1rem;
@@ -267,12 +252,12 @@ nav {
   border-radius: 0px;
 }
 
-.dd-btn:disabled{
+.dd-btn:disabled {
   border: 1px solid #E6E6E6;
   color: #C8C8C8;
 }
 
-.dd-btn:enabled{
+.dd-btn:enabled {
   border: 1px solid #002B56;
   color: #002B56;
 }
@@ -371,7 +356,7 @@ nav {
   font-size: 20px;
 }
 
-.rest-rev-num-revs{
+.rest-rev-num-revs {
   margin: 20px 0px;
   font: 'Helvetica Neue';
   font-weight: 300;
@@ -390,7 +375,7 @@ nav {
   border-bottom: 1px solid #C8C8C8;
 }
 
-.rev-img-container{
+.rev-img-container {
   display: flex;
   flex-direction: column;
   overflow: hidden;

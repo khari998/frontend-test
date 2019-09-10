@@ -1,13 +1,12 @@
 import * as React from 'react'
-import { Fragment } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDispatch, useSelector } from 'react-redux';
 
-import { isOpenToggle, closeOpenToggle, priceItemToggle, catItemToggle } from '../redux/actions/actions';
+import { isOpenToggle, closeOpenToggle, priceItemToggle, catItemToggle, closeFilterLists } from '../redux/actions/actions';
 import Dropdown from './Dropdown'
 import { DdItem } from '../models/models';
 
-export default function FilterRestaurants() {
+const FilterRestaurants = () => {
   // UseSelector - redux hook that grabs current elements of state within redux store
   const openFilter = useSelector((state: any) => state.openFilter)
   const priceFilter = useSelector((state: any) => state.priceFilter)
@@ -54,6 +53,7 @@ export default function FilterRestaurants() {
     dispatch(closeOpenToggle()) // Sets Open filter to false
     dispatch(priceItemToggle(clearPrices)) // Pass new array to change state
     dispatch(catItemToggle(clearCats)) // Pass new array to change state
+    dispatch(closeFilterLists()) // close current open filter lists
   }
 
   return (
@@ -96,3 +96,5 @@ export default function FilterRestaurants() {
     </div>
   )
 }
+
+export default FilterRestaurants;

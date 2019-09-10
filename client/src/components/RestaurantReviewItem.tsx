@@ -1,17 +1,14 @@
 import * as React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Moment from 'react-moment';
 
-import { Restaurant, Review } from '../models/models'
+import { Review } from '../models/models'
 import StarRating from './StarRating'
 
 interface reviewsProp {
   review: Review,
 }
 
-export default function RestaurantReviewItem({ review } : reviewsProp) {
-  
-  return (
+const RestaurantReviewItem = ({ review } : reviewsProp) => (
     <div className="rev-container">
 
       <div className="rev-img-container">
@@ -38,4 +35,5 @@ export default function RestaurantReviewItem({ review } : reviewsProp) {
       </div>
     </div>
   )
-}
+
+export default RestaurantReviewItem

@@ -47,6 +47,8 @@ export const priceFilterReducer = (state = false, action: any) => {
   switch (action.type) {
     case "PRICEFILTER":
       return !state;
+    case "KILLFILTERLISTS":
+      return false;
     default:
       return state;
   }
@@ -56,6 +58,8 @@ export const catFilterReducer = (state = false, action: any) => {
   switch (action.type) {
     case "CATFILTER":
       return !state;
+    case "KILLFILTERLISTS":
+      return false;
     default:
       return state;
   }

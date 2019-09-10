@@ -31,7 +31,7 @@ import { exRestaurants } from './models/testdata'
 const devUri = 'http://localhost:5000/graphql'; // use for development
 const prodUri = '/graphql'
 const client = new ApolloClient({
-  uri: prodUri
+  uri: devUri
 })
 
 const allReducers = combineReducers({ // combines state from multiple reducers

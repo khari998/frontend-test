@@ -41,4 +41,8 @@ export const loadMore = () => ({
   payload: 10,
 })
 
+export const closeFilterLists = () => ({
+  type: 'KILLFILTERLISTS'
+})
+
 

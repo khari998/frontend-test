@@ -3,8 +3,9 @@ import RestaurantItem from './RestaurantItem'
 import { Restaurant, DdItem } from '../models/models'
 import { useSelector, useDispatch } from 'react-redux';
 import { loadMore } from '../redux/actions/actions';
+import { Fragment } from 'react';
 
-export default function RestaurantList() {
+const RestaurantList = () => {
   // Redux hook that allows actions to be dispatched
   const dispatch = useDispatch();
 
@@ -43,7 +44,7 @@ export default function RestaurantList() {
   }
 
   return (
-    <div>
+    <Fragment>
       <h1 className="rest-subtitle">All Restaurants</h1>
       <ul className="restaurants">
         { 
@@ -63,6 +64,8 @@ export default function RestaurantList() {
         maxItems < rList.length && 
         <button className="btn load-more" onClick={loadAdditionalItems}> LOAD MORE </button>
       }
-    </div>
+    </Fragment>
   )
 }
+
+export default RestaurantList

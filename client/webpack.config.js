@@ -10,6 +10,8 @@ const HTMLWebPackPlugin = new HtmlWebpackPlugin({
 });
 
 module.exports = {
+  watch: true,
+  mode: "production",
   entry: [
     "../client/src/index.tsx",
     "../client/src/styling.css",
@@ -51,7 +53,7 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js", ".jsx"]
   },
   devServer: {
-    contentBase: "../public/build",
+    contentBase: "../client/src/",
     hot: true,
     port: 3000,
     historyApiFallback: true

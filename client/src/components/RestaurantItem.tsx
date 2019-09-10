@@ -2,23 +2,24 @@ import * as React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Restaurant } from '../models/models'
-import StarRating from './StarRating'
 import { Redirect } from 'react-router-dom';
 
+import { Restaurant } from '../models/models'
+import StarRating from './StarRating'
 
 interface rListItemProps {
   R: Restaurant,
 }
 
-export default function RestaurantItem ({ R }: rListItemProps,) {
+const RestaurantItem = ({ R }: rListItemProps) => {
   
-  const [clicked, changeClick] = useState(false)
+  const [clicked, changeClick] = useState(false) // Manage per item state with react hooks
 
   const learnMoreClicked = () => {
-    changeClick(true);
+    changeClick(true); // change state of clicked to true when clicked
   }
 
+  // Send to reviews page when clicked is true
   return (clicked) ? <Redirect to={`/reviews/${R.resId}`}></Redirect> : (
     <li className="card-item">
       <div className="card">
@@ -60,3 +61,4 @@ export default function RestaurantItem ({ R }: rListItemProps,) {
   )
 }
 
+export default RestaurantItem
