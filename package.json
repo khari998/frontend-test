@@ -33,5 +33,13 @@
   },
   "engines": {
     "node": "8.14.0"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "enzyme-to-json": "^3.4.0",
+    "jest": "^24.9.0",
+    "raf": "^3.4.1",
+    "ts-jest": "^24.0.2"
   }
 }
