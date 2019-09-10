@@ -160,7 +160,7 @@ nav {
   grid-area: button;
   background-color: #002B56;
   border: 1px solid #002B56;
-  height: 3.3rem;
+  height: 3.6rem;
   border-radius: 2px;
   font-size: 14px;
 }
@@ -172,6 +172,8 @@ nav {
   margin-top: 0.5rem;
   color: #696969;
   font-weight: 300;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
   text-transform: uppercase;
   grid-area: meta;
 }
@@ -190,6 +192,8 @@ nav {
 
 .text-container {
   display: grid;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
   grid-template-columns: 40% auto 40%;
   grid-template-areas: "left center right"
 }
