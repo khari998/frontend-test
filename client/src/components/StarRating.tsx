@@ -32,4 +32,6 @@ const StarRating = ({ rating, size }: ratingProp) => {
   )
 }
 
-export default StarRating;
+const MemStarRating = React.memo(StarRating)
+
+export default MemStarRating;

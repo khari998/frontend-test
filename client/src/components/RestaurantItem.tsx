@@ -61,4 +61,6 @@ const RestaurantItem = ({ R }: rListItemProps) => {
   )
 }
 
-export default RestaurantItem
+const MemRestaurantItem = React.memo(RestaurantItem)
+
+export default MemRestaurantItem

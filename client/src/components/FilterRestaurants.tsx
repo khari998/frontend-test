@@ -97,4 +97,6 @@ const FilterRestaurants = () => {
   )
 }
 
-export default FilterRestaurants;
+const MemFilterRestaurants = React.memo(FilterRestaurants)
+
+export default MemFilterRestaurants;

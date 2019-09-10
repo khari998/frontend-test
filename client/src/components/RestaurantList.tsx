@@ -68,4 +68,6 @@ const RestaurantList = () => {
   )
 }
 
-export default RestaurantList
+const MemRestaurantList = React.memo(RestaurantList)
+
+export default MemRestaurantList

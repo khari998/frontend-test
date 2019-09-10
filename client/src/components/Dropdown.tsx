@@ -88,4 +88,6 @@ const Dropdown = ({ ddList, ddHeader, ddOpen } : ddProps) => {
   )
 }
 
-export default Dropdown
+const MemDropdown = React.memo(Dropdown);
+
+export default MemDropdown

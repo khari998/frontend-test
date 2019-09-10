@@ -36,4 +36,6 @@ const RestaurantReviewItem = ({ review } : reviewsProp) => (
     </div>
   )
 
-export default RestaurantReviewItem
+const MemRestaurantReviewItem = React.memo(RestaurantReviewItem)
+
+export default MemRestaurantReviewItem

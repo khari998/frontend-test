@@ -13,4 +13,6 @@ const App: React.FC = (): JSX.Element => (
   </Router>
 )
 
-export default App;
+const memApp = React.memo(App);
+
+export default memApp;

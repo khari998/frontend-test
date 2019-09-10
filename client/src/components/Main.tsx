@@ -10,13 +10,13 @@ import RestaurantList from './RestaurantList';
 import { Restaurant, DdItem, Review } from '../models/models';
 import { catItemToggle, updateRestaurants } from '../redux/actions/actions' 
 
-export default function Main(): JSX.Element {
+const Main = (): JSX.Element => {
   // Redux hook that allows actions to be dispatched
   const dispatch = useDispatch();
   
   return (
     <Fragment>
-      <Query query={RestaurantQuery}> 
+      {/* <Query query={RestaurantQuery}> 
         {
           ({ loading, error, data } : any) => {
             if (loading) { // Loads spinner while data is being fetched
@@ -75,16 +75,20 @@ export default function Main(): JSX.Element {
                   </Fragment>
           }
         }
-      </Query>
+      </Query> */}
 
 
       {/* If API Key breaks, render this instead */}
       
-      {/* <h1 className="rest-sub-1">Restaurants</h1>
+      <h1 className="rest-sub-1">Restaurants</h1>
       <p className="rest-sub2">Browse through a curated list of your favorite restaurants</p>
       <FilterRestaurants />
-      <RestaurantList />  */}
+      <RestaurantList /> 
       
     </Fragment>
   )
 }
+
+const MemMain = React.memo(Main)
+
+export default MemMain

@@ -89,4 +89,6 @@ const RestaurantReviews = ({ match }: any) => { // id property is initialized af
   )
 }
 
-export default RestaurantReviews;
+const MemRestaurantReviews = React.memo(RestaurantReviews)
+
+export default MemRestaurantReviews;
