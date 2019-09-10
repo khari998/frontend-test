@@ -68,8 +68,8 @@ export default function Main(): JSX.Element {
             dispatch(catItemToggle(allCategories)) // Update redux state with list of unique categories
 
             return <Fragment>
-                    <h1>Restaurants</h1>
-                    <p>Browse through a curated list of your favorite restaurants</p>
+                    <h1 className="opening-title">Restaurants</h1>
+                    <p className="opening-par">Browse through a curated list of your favorite restaurants</p>
                     <FilterRestaurants />
                     <RestaurantList />
                   </Fragment>

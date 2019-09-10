@@ -26,6 +26,20 @@ nav {
   position: absolute;
 }
 
+.opening-title{
+  margin: 10px 0px;
+  font: 'Helvetica Neue';
+  font-weight: 400;
+  font-size: 54px;
+}
+
+.opening-par{
+  margin: 10px 0px;
+  font: 'Helvetica Neue';
+  font-weight: 300;
+  font-size: 22px;
+}
+
 .load-spinner{
   position: fixed;
   top: 50%;
