@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Moment from 'react-moment';
 
 import { Restaurant, Review } from '../models/models'
-import { Fragment } from 'react';
 import StarRating from './StarRating'
 
 interface reviewsProp {
@@ -23,7 +23,7 @@ export default function RestaurantReviewItem({ review } : reviewsProp) {
           { review.name }
         </div>
         <div className="rev-date">
-          { review.date }
+          <Moment date={review.date}></Moment>
         </div>
       </div>
 

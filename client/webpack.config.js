@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -10,7 +10,11 @@ const HTMLWebPackPlugin = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-  entry: ["../client/src/index.tsx", "../client/src/styling.css"],
+  entry: [
+    "../client/src/index.tsx",
+    "../client/src/styling.css",
+    "../client/src/assets/MapMarker.png"
+  ],
   output: {
     path: path.resolve(__dirname, "../public/build"),
     filename: "bundle.js"
@@ -35,9 +39,11 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        include: path.join(__dirname, "../client/assets/"),
-        use: ["file-loader"]
+        test: /\.(png)$/,
+        loader: "file-loader",
+        options: {
+          name: "./assets/MapMarker.png"
+        }
       }
     ]
   },

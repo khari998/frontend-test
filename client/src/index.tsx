@@ -1,4 +1,5 @@
 import * as css from './styling.css'
+import MapMarker from './assets/MapMarker.png'
 // import * as MapMarker from './assets/MapMarker.png'
 
 import * as React from 'react'

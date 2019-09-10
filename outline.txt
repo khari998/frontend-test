@@ -54,6 +54,9 @@ Completed
     Clean up dependencies
   Account for multiple categories in Reviews
   Heroku Deploy
+  Fix format spacing on reviews page
+  Fix date format on reviews page
+  Serve static asset to production build
 
 Todo
   Unit Tests
