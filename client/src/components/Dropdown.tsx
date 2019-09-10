@@ -88,6 +88,7 @@ const Dropdown = ({ ddList, ddHeader, ddOpen } : ddProps) => {
   )
 }
 
+// Functional Component is memoized for higher performance
 const MemDropdown = React.memo(Dropdown);
 
 export default MemDropdown

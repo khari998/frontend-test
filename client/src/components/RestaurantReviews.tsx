@@ -15,10 +15,11 @@ const RestaurantReviews = ({ match }: any) => { // id property is initialized af
   // Access restaurant that was clicked by matching the id property to the restaruant held in state
   const selectedRest: Restaurant = useSelector((state: any) => state.restaurants).filter((rest: Restaurant) => rest.resId === match.params.id)[0]
   
+  // Access coordinates for restaurant
   const restPosition = { lat: selectedRest.coordinates[0], lng: selectedRest.coordinates[1] }
 
   // Map component must be made here to gain acces to params on Restaurant provided by match
-  const Map = () => (
+  const Map: React.FC = (): JSX.Element => (
       <GoogleMap
         defaultZoom={18}
         defaultCenter={restPosition}
@@ -37,7 +38,7 @@ const RestaurantReviews = ({ match }: any) => { // id property is initialized af
   const WrappedMap = withScriptjs(withGoogleMap(Map))
   
   // Final output map
-  const OutputMap = () => (
+  const OutputMap: React.FC = (): JSX.Element => (
       <div style={{ height: '30vw', width: '94.5vw' }}>
         <WrappedMap
           googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
@@ -89,6 +90,7 @@ const RestaurantReviews = ({ match }: any) => { // id property is initialized af
   )
 }
 
+// Functional Component is memoized for higher performance
 const MemRestaurantReviews = React.memo(RestaurantReviews)
 
 export default MemRestaurantReviews;

@@ -32,6 +32,7 @@ const StarRating = ({ rating, size }: ratingProp) => {
   )
 }
 
+// Functional Component is memoized for higher performance
 const MemStarRating = React.memo(StarRating)
 
 export default MemStarRating;

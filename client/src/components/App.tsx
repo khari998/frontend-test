@@ -13,6 +13,7 @@ const App: React.FC = (): JSX.Element => (
   </Router>
 )
 
+// Functional Component is memoized for higher performance
 const memApp = React.memo(App);
 
 export default memApp;

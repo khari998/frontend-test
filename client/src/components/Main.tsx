@@ -10,7 +10,7 @@ import RestaurantList from './RestaurantList';
 import { Restaurant, DdItem, Review } from '../models/models';
 import { catItemToggle, updateRestaurants } from '../redux/actions/actions' 
 
-const Main = (): JSX.Element => {
+const Main: React.FC = (): JSX.Element => {
   // Redux hook that allows actions to be dispatched
   const dispatch = useDispatch();
   
@@ -89,6 +89,7 @@ const Main = (): JSX.Element => {
   )
 }
 
+// Functional Component is memoized for higher performance
 const MemMain = React.memo(Main)
 
 export default MemMain

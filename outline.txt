@@ -57,12 +57,14 @@ Completed
   Fix format spacing on reviews page
   Serve static asset to production build
   Fix date format on reviews page
+  Optimize functional components
+    Memoize components
+    Change unnecessary divs to Fragments for more performance
+    Convert functions to arrow syntax
 
 Todo
   Unit Tests
   More Tests - Use Storybook https://storybook.js.org/
-    Change unnecessary divs to Fragments for more performance
-    Convert functions to arrow syntax
   Make Responsive -- Web-Mobile
   Documentation -- Include Conclusion with optimizations
 

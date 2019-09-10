@@ -6,7 +6,7 @@ import { isOpenToggle, closeOpenToggle, priceItemToggle, catItemToggle, closeFil
 import Dropdown from './Dropdown'
 import { DdItem } from '../models/models';
 
-const FilterRestaurants = () => {
+const FilterRestaurants: React.FC = () => {
   // UseSelector - redux hook that grabs current elements of state within redux store
   const openFilter = useSelector((state: any) => state.openFilter)
   const priceFilter = useSelector((state: any) => state.priceFilter)
@@ -97,6 +97,7 @@ const FilterRestaurants = () => {
   )
 }
 
+// Functional Component is memoized for higher performance
 const MemFilterRestaurants = React.memo(FilterRestaurants)
 
 export default MemFilterRestaurants;

@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { loadMore } from '../redux/actions/actions';
 import { Fragment } from 'react';
 
-const RestaurantList = () => {
+const RestaurantList: React.FC = (): JSX.Element => {
   // Redux hook that allows actions to be dispatched
   const dispatch = useDispatch();
 
@@ -68,6 +68,7 @@ const RestaurantList = () => {
   )
 }
 
+// Functional Component is memoized for higher performance
 const MemRestaurantList = React.memo(RestaurantList)
 
 export default MemRestaurantList

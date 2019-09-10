@@ -36,6 +36,7 @@ const RestaurantReviewItem = ({ review } : reviewsProp) => (
     </div>
   )
 
+// Functional Component is memoized for higher performance
 const MemRestaurantReviewItem = React.memo(RestaurantReviewItem)
 
 export default MemRestaurantReviewItem

@@ -61,6 +61,7 @@ const RestaurantItem = ({ R }: rListItemProps) => {
   )
 }
 
+// Functional Component is memoized for higher performance
 const MemRestaurantItem = React.memo(RestaurantItem)
 
 export default MemRestaurantItem
