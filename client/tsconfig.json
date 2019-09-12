@@ -11,10 +11,21 @@
     "emitDecoratorMetadata": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "rootDirs": [
+      "src"
+    ],
     "lib": [
       "esnext",
+      "es5",
       "es6",
+      "es7",
+      "es2017",
       "dom"
     ],
     "strict": true,
@@ -31,6 +42,7 @@
   ],
   "exclude": [
     "node_modues",
-    "build"
+    "build",
+    "scripts"
   ]
 }

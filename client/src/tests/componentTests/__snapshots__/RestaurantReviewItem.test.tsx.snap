@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RestaurantReviewItem Component Initial Render Should render without errors 1`] = `
+<div
+  className="rev-container"
+>
+  <div
+    className="rev-img-container"
+  >
+    <img
+      className="rev-img"
+      src="https://img1.looper.com/img/gallery/mclovin-from-superbad-looks-totally-different-today/intro-1535553409.jpg"
+    />
+  </div>
+  <div
+    className="rev-meta"
+  >
+    <div
+      className="rev-name"
+    >
+      Jon
+    </div>
+    <div
+      className="rev-date"
+    >
+      <time
+        dateTime={"2019-08-31T05:00:00.000Z"}
+      >
+        08/31/2019
+      </time>
+    </div>
+  </div>
+  <div
+    className="rev-rating-text"
+  >
+    <div
+      className="rev-rating"
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-star fa-w-18 fa-1x "
+        color="#002B56"
+        data-icon="star"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 576 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-star fa-w-18 fa-1x "
+        color="#002B56"
+        data-icon="star"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 576 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-star fa-w-18 fa-1x "
+        color="#002B56"
+        data-icon="star"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 576 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-star fa-w-18 fa-1x "
+        color="#002B56"
+        data-icon="star"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 576 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-star fa-w-18 fa-1x "
+        color="#002B56"
+        data-icon="star"
+        data-prefix="far"
+        focusable="false"
+        role="img"
+        style={Object {}}
+        viewBox="0 0 576 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+    </div>
+    <p
+      className="rev-text"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+ut labore et dolore magna aliqua. Turpis tincidunt id aliquet risus feugiat in ante metus dictum. 
+Suspendisse ultrices gravida dictum fusce. Aliquet nec ullamcorper sit amet risus. At consectetur lorem donec 
+massa sapien faucibus et molestie. Amet justo donec enim diam vulputate ut pharetra sit. Cursus in hac habitasse 
+platea dictumst. Aenean sed adipiscing diam donec adipiscing tristique risus nec. Dolor purus non enim praesent 
+elementum facilisis leo. Eget aliquet nibh praesent tristique magna sit amet purus gravida. Maecenas accumsan 
+lacus vel facilisis volutpat. Volutpat maecenas volutpat blandit aliquam etiam. Egestas fringilla phasellus 
+faucibus scelerisque eleifend donec pretium vulputate. Egestas tellus rutrum tellus pellentesque eu tincidunt 
+tortor aliquam nulla. Amet cursus sit amet dictum sit amet. Nisi porta lorem mollis aliquam ut. Dignissim diam 
+quis enim lobortis scelerisque fermentum dui. Ipsum dolor sit amet consectetur adipiscing elit ut. Tellus molestie 
+nunc non blandit massa enim nec. Et malesuada fames ac turpis egestas maecenas.
+    </p>
+  </div>
+</div>
+`;
