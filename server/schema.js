@@ -22,7 +22,6 @@ const yelpGraphQL = axios.create({
   }
 });
 
-
 // GraphQL Schema for data from Yelp API
 
 const RestaurantType = new GraphQLObjectType({

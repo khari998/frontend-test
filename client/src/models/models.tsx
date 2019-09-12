@@ -77,3 +77,4 @@ export class Restaurant { // class model for Restaurants
     this.location = location;
   }
 }
+

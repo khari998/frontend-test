@@ -1,6 +1,5 @@
 import * as css from './styling.css'
 import MapMarker from './assets/MapMarker.png'
-// import * as MapMarker from './assets/MapMarker.png'
 
 import * as React from 'react'
 import { render } from 'react-dom'
@@ -31,8 +30,8 @@ import { exRestaurants } from './models/testdata'
 const devUri = 'http://localhost:5000/graphql'; // use for development
 const prodUri = '/graphql'
 const client = new ApolloClient({
-  uri: devUri
-})
+  uri: prodUri
+});
 
 const allReducers = combineReducers({ // combines state from multiple reducers
   restaurants: restaurantsReducer,

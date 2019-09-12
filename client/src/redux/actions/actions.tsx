@@ -45,4 +45,3 @@ export const closeFilterLists = () => ({
   type: 'KILLFILTERLISTS'
 })
 
-

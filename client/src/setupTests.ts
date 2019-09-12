@@ -4,3 +4,4 @@ configure({
   adapter: new Adapter(),
   disableLifecycleMethods: true
 })
+

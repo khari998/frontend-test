@@ -17,3 +17,4 @@ const App: React.FC = (): JSX.Element => (
 const memApp = React.memo(App);
 
 export default memApp;
+

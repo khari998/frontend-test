@@ -3,6 +3,7 @@ const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+
 const HTMLWebPackPlugin = new HtmlWebpackPlugin({
   template: path.resolve(__dirname, "../client/src/index.html"),
   filename: 'index.html',
@@ -37,13 +38,7 @@ module.exports = {
               reloadAll: true
             }
           },
-          "css-loader",
-          {
-            loader: require.resolve("awesome-typescript-loader")
-          },
-          {
-            loader: require.resolve("react-docgen-typescript-loader")
-          }
+          "css-loader"
         ]
       },
       {
