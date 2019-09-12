@@ -26,7 +26,7 @@ const StarRating = ({ rating, size }: ratingProp) => {
   }
   
   return (
-    <Fragment>
+    <Fragment >
       { starArr }
     </Fragment>
   )

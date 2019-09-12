@@ -15,7 +15,7 @@ import { ApolloProvider } from 'react-apollo'
 
 library.add(fab, faAngleUp, faAngleDown, faStar, faStarHalfAlt, farStar, faCircle, farCircle, faDotCircle, faCheckCircle)
 
-import App from './components/App'
+import App from './pages/App'
 import { costArr, categoriesArr } from './models/ddData'
 import { 
   restaurantsReducer, 

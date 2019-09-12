@@ -45,16 +45,16 @@ const RestaurantList: React.FC = (): JSX.Element => {
 
   return (
     <Fragment>
-      <h1 className="rest-subtitle">All Restaurants</h1>
-      <ul className="restaurants">
+      <h1 className="rest-subtitle" >All Restaurants</h1>
+      <ul className="restaurants" >
         { 
           rList.length ? 
           rList.slice(0, maxItems).map((restaurant: Restaurant) => <RestaurantItem R={restaurant} key={restaurant.resId}/>)
-          : <div className="no-rests">
-              <h1 className="no-rests-text">
+            : <div className="no-rests" >
+              <h1 className="no-rests-text" >
                 No venues match your filter parameters.
               </h1>
-              <h1 className="no-rests-text">
+              <h1 className="no-rests-text" >
                 Please clear your filters and try again.
               </h1>
             </div>

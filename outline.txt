@@ -60,12 +60,12 @@ Completed
   Optimize functional components
     Memoize components
     Change unnecessary divs to Fragments for more performance
-    Convert functions to arrow syntax
 
 Todo
   Unit Tests
   More Tests - Use Storybook https://storybook.js.org/
   Make Responsive -- Web-Mobile
+  Minify CSS
   Documentation -- Include Conclusion with optimizations
 
 Extra

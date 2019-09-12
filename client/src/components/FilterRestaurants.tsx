@@ -6,7 +6,7 @@ import { isOpenToggle, closeOpenToggle, priceItemToggle, catItemToggle, closeFil
 import Dropdown from './Dropdown'
 import { DdItem } from '../models/models';
 
-const FilterRestaurants: React.FC = () => {
+const FilterRestaurants: React.FC = (): JSX.Element => {
   // UseSelector - redux hook that grabs current elements of state within redux store
   const openFilter = useSelector((state: any) => state.openFilter)
   const priceFilter = useSelector((state: any) => state.priceFilter)
@@ -28,7 +28,7 @@ const FilterRestaurants: React.FC = () => {
     dispatch(isOpenToggle()) // dispatches isOpenToggle action to redux store
   } 
   
-  const clearAll = () => {
+  const clearAll = () => { // click handler function for clearing all categories
     // Pass new array as state with selected property as false to deselect all categories
     const clearCats = ddCats.map((item: DdItem) => {
       if (item.content !== "All") { // Account for All filter edge case
@@ -53,23 +53,23 @@ const FilterRestaurants: React.FC = () => {
     dispatch(closeOpenToggle()) // Sets Open filter to false
     dispatch(priceItemToggle(clearPrices)) // Pass new array to change state
     dispatch(catItemToggle(clearCats)) // Pass new array to change state
-    dispatch(closeFilterLists()) // close current open filter lists
+    dispatch(closeFilterLists()) // close current open filter lists -- comment out to keep lists open
   }
 
   return (
-    <div className="dd-container-wrapper">
-      <div className="dd-container">
+    <div className="dd-container-wrapper" >
+      <div className="dd-container" >
 
-        <div className="dd-filter">
+        <div className="dd-filter" >
           {"Filter By:" }
         </div>
 
-        <div className="dd-open" onClick={toggleOpen}>
+        <div className="dd-open" onClick={toggleOpen} >
           {openFilter ? <FontAwesomeIcon icon={['far', 'dot-circle']} color="#002B56" /> : <FontAwesomeIcon icon={['far', 'circle']} color="#002B56" /> }
           {'  Open Now'}
         </div>
 
-        <div className="dd-dd1">
+        <div className="dd-dd1" >
           <Dropdown 
             ddList={ddPrices}
             ddHeader="Price"
@@ -77,7 +77,7 @@ const FilterRestaurants: React.FC = () => {
           ></Dropdown>
         </div>
 
-        <div className="dd-dd2">
+        <div className="dd-dd2" >
           <Dropdown
             ddList={ddCats}
             ddHeader="Categories"
@@ -87,8 +87,8 @@ const FilterRestaurants: React.FC = () => {
 
         <div className="dd-button" >
           {
-            enabled ? <button className="dd-btn" onClick={clearAll}> CLEAR ALL </button> :
-              <button className="dd-btn" disabled onClick={clearAll}> CLEAR ALL </button>
+            enabled ? <button className="dd-btn" onClick={clearAll} > CLEAR ALL </button> :
+              <button className="dd-btn" disabled onClick={clearAll} > CLEAR ALL </button>
           }
         </div>
 

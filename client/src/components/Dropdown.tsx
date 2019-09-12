@@ -61,11 +61,11 @@ const Dropdown = ({ ddList, ddHeader, ddOpen } : ddProps) => {
   }
 
   return (
-    <div className="dd-header" >
+    <div className="dd-header">
 
       <div className="dd-header-title" onClick={openDD}>
         { `${ddHeader}  `}
-        {ddOpen ? <FontAwesomeIcon icon="angle-up" color="#C8C8C8" /> : <FontAwesomeIcon icon="angle-down" color="#C8C8C8"/>}
+        {ddOpen ? <FontAwesomeIcon icon="angle-up" color="#C8C8C8" /> : <FontAwesomeIcon icon="angle-down" color="#C8C8C8" />}
       </div>
       
       {
@@ -77,7 +77,9 @@ const Dropdown = ({ ddList, ddHeader, ddOpen } : ddProps) => {
                   className="dd-list-item"
                   key={keyInd}
                   onClick={() => selectDdItem(keyInd)}
-              >{listItem.selected ? <FontAwesomeIcon icon="check-circle" color="#002B56" /> : <FontAwesomeIcon icon={['far', 'circle']} color="#002B56"/>}{`  ${listItem.content}`}</div>
+                >{listItem.selected ? <FontAwesomeIcon icon="check-circle" color="#002B56" /> : <FontAwesomeIcon icon={['far', 'circle']} color="#002B56" />}
+                {`  ${listItem.content}`}
+                </div>
               )
             )
           }
