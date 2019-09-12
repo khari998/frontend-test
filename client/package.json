@@ -88,8 +88,7 @@
     "nodemon": "^1.19.2",
     "raf": "^3.4.1",
     "style-loader": "^1.0.0",
-    "ts-jest": "^24.0.2",
-    
+    "ts-jest": "^24.0.2"
   },
   "proxy": "http://localhost:5000",
   "jest": {
