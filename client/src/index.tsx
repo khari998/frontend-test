@@ -53,7 +53,6 @@ const store = createStore(
   },
 );
 
-
 const rootId = document.getElementById('root'); // Access root id property on index.html
 
 render( // Wrap App in Provider && pass store as prop to give components access to redux store
