@@ -1,4 +1,3 @@
-// export {} // to make typescript happy
 
 import { Restaurant, Review } from './models';
 import { costArr, categoriesArr } from '../models/ddData'
@@ -104,7 +103,7 @@ export const exRestaurants = [
   new Restaurant('1', 'Carrabas', [categoriesArr[1].content], true, costArr[3].content, 4, imgs.car, 3425, 'Pete Rose Blvd', [55.3426, -46.43524], carReviews),
   new Restaurant('2', 'Copelands', [categoriesArr[1].content, "Italian", "Delicious"], false, costArr[4].content, 4, imgs.cope, 23456, 'Pete Rose Blvd', [55.3426, -46.43524], copeReviews),
   new Restaurant('3', 'Dragos', [categoriesArr[2].content], false, costArr[4].content, 4, imgs.dragos, 4591, 'Pete Rose Blvd', [55.3426, -46.43524], dragReviews),
-  new Restaurant('4', 'Red Lobster', [categoriesArr[2].content], true, costArr[3].content, 4, imgs.redL, 2346, 'Pete Rose Blvd', [55.3426, -46.43524], redReviews),
+  new Restaurant('4', 'Red Lobster', [categoriesArr[2].content, 'italian', 'happiness'], true, costArr[3].content, 4, imgs.redL, 2346, 'Pete Rose Blvd', [55.3426, -46.43524], redReviews),
   new Restaurant('5', 'Outback', [categoriesArr[3].content], true, costArr[4].content, 4, imgs.outb, 324566, 'Pete Rose Blvd', [55.3426, -46.43524], outReviews),
   new Restaurant('6', 'Panda Express', [categoriesArr[4].content], false, costArr[1].content, 4, imgs.panda, 34571, 'Pete Rose Blvd', [55.3426, -46.43524], pandaReviews),
   new Restaurant('7', 'McDonalds', [categoriesArr[5].content], false, costArr[1].content, 4, imgs.mcDon, 43735, 'Pete Rose Blvd', [55.3426, -46.43524], mcReviews),

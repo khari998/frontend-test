@@ -49,3 +49,4 @@ export const revName: string;
 export const revDate: string;
 export const revRating: string;
 export const revText: string;
+

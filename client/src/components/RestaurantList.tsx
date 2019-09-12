@@ -72,3 +72,4 @@ const RestaurantList: React.FC = (): JSX.Element => {
 const MemRestaurantList = React.memo(RestaurantList)
 
 export default MemRestaurantList
+

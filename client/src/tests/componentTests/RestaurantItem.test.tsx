@@ -101,5 +101,4 @@ describe('RestaurantItem Component', () => {
     })
 
   })
-
 })

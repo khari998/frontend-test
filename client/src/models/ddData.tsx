@@ -18,3 +18,4 @@ export const categoriesArr: DdItem[] = [ // Default Categories Dropdown data
   new DdItem('Mexican', false),
   new DdItem('Thai', false),
 ]
+

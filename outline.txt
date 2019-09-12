@@ -60,21 +60,29 @@ Completed
   Optimize functional components
     Memoize components
     Change unnecessary divs to Fragments for more performance
-
-Todo
   Unit Tests
   More Tests - Use Storybook https://storybook.js.org/
-  Make Responsive -- Web-Mobile
-  Minify CSS
   Documentation -- Include Conclusion with optimizations
 
+
 Extra
+  Make Responsive -- Web-Mobile
   Flutter native mobile version
   Refactor server code to typescript
   Persist data to backend (favorite restaurants)
   More Styling -- add Animations
 
 Roadblocks
+  
+  Minify CSS -- CSS would not minify with recommended packages. Must look into other solutions that work with typescript.
+
+  Apollo recently refactored to react hooks which is causing rerendering bugs. This is a known issue to the Apollo team. 
+  Memoizing the resulting component seems to be the only way to mitigate the effects of this
+
+  Storybook is compiling but won't load any typescript components.
+  Solution
+    Keep looking for config that will allow proper loading of Provider wrapped typescript components  
+
   Query only necessary information on reviews page
     Removing reviews from initial query decreases latency by 1.0s on average however,
     in order to query graphQL separately, the restaurant ID of the clicked restaurant

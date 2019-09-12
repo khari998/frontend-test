@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "../public/build/",
+    "outDir": "../server/public/build",
     "noImplicitAny": true,
     "target": "es5",
     "allowJs": true,
@@ -15,8 +15,7 @@
     "noImplicitThis": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true,
-    "declaration": true,
+    "isolatedModules": true,
     "rootDirs": [
       "src"
     ],
@@ -46,3 +45,4 @@
     "scripts"
   ]
 }
+

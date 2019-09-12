@@ -10,3 +10,4 @@ module.exports = {
   testURL: "http://localhost/",
   setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"]
 };
+

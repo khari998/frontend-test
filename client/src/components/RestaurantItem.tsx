@@ -19,6 +19,7 @@ const RestaurantItem = ({ R }: rListItemProps) => {
     changeClick(true); // change state of clicked to true when clicked
   }
 
+
   // Send to reviews page when clicked is true
   return (clicked) ? <Redirect to={`/reviews/${R.resId}`}></Redirect> : (
     <li className="card-item">
@@ -39,7 +40,7 @@ const RestaurantItem = ({ R }: rListItemProps) => {
           <div className="card-text">
             <div className="text-container">
               <div className="meta-left">
-                { R.category.map((str, ind) => <div key={ind}>{str}</div>) }
+                { R.category.map((str, ind) => <div key={ind}>{str}</div>)}
               </div>
               <div className="meta-center">
                 { `· ${R.cost}`}
@@ -65,3 +66,4 @@ const RestaurantItem = ({ R }: rListItemProps) => {
 const MemRestaurantItem = React.memo(RestaurantItem)
 
 export default MemRestaurantItem
+
