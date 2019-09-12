@@ -103,18 +103,18 @@ const Main: React.FC = (): JSX.Element => (
           );
         }
       }
-    </Query>
+      </Query>
 
 
-    {/* If API Key breaks, render this instead */}
-    
-    {/* <h1 className="rest-sub-1" >Restaurants</h1>
-    <p className="rest-sub2" >Browse through a curated list of your favorite restaurants</p>
-    <FilterRestaurants />
-    <RestaurantList />  */}
-    
-  </Fragment>
-)
+      {/* If API Key breaks, render this instead */}
+      
+      {/* <h1 className="rest-sub-1" >Restaurants</h1>
+      <p className="rest-sub2" >Browse through a curated list of your favorite restaurants</p>
+      <FilterRestaurants />
+      <RestaurantList />   */}
+      
+    </Fragment>
+  )
 
 // Functional Com÷ponent is memoized for higher performance
 const MemMain = React.memo(Main)
