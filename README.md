@@ -79,3 +79,4 @@ Challenges/Difficulties
     I was able to decrease latency by 1.0s, however I could not figure out how to make frontend requests to these specific queries
     as the data was already received from the initial query. Potentially refactoring the server to use Express instead can remedy this,
     however I did not want to spend too much time on this vs finishing the application.
+
