@@ -9,6 +9,7 @@ import FilterRestaurants from '../components/FilterRestaurants';
 import RestaurantList from '../components/RestaurantList';
 import { Restaurant, DdItem, Review } from '../models/models';
 import { catItemToggle, updateRestaurants } from '../redux/actions/actions' 
+import { withRouter } from 'react-router-dom';
 
 const Main: React.FC = (): JSX.Element => (
   <Fragment >
@@ -119,4 +120,4 @@ const Main: React.FC = (): JSX.Element => (
 // Functional Com÷ponent is memoized for higher performance
 const MemMain = React.memo(Main)
 
-export default MemMain
+export default withRouter(MemMain)

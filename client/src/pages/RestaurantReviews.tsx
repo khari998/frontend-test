@@ -7,6 +7,7 @@ import { Restaurant, Review } from '../models/models'
 import { Fragment } from 'react';
 import RestaurantReviewItem from '../components/RestaurantReviewItem';
 import StarRating from '../components/StarRating';
+import { withRouter } from 'react-router-dom';
 
 const RestaurantReviews = ({ match }: any) => { // id property is initialized after initial params so any type is used
 
@@ -61,8 +62,12 @@ const RestaurantReviews = ({ match }: any) => { // id property is initialized af
 
 
         <div className="rest-rev-meta-left" >
-          {`${selectedRest.category.length === 1 ? selectedRest.category.reduce((newStr, str) => newStr.concat(str), '') :
-            selectedRest.category.reduce((newStr: string, cat: string, ind: number, arr: string[]) => ind !== arr.length - 1 ? newStr.concat(`${cat}, `) : newStr.concat(`and ${cat}`), '')} · ${selectedRest.cost}`}
+          {`${
+              selectedRest.category.length === 1 ? selectedRest.category.reduce((newStr, str) => newStr.concat(str), '') :
+              selectedRest.category.reduce((newStr: string, cat: string, ind: number, arr: string[]) => ind !== arr.length - 1 ? newStr.concat(`${cat}, `) : newStr.concat(`and ${cat}`), '')
+            }
+            · ${selectedRest.cost}`
+          }
         </div>
         
         <div className="rest-rev-meta-right" >
@@ -94,5 +99,5 @@ const RestaurantReviews = ({ match }: any) => { // id property is initialized af
 // Functional Component is memoized for higher performance
 const MemRestaurantReviews = React.memo(RestaurantReviews)
 
-export default MemRestaurantReviews;
+export default withRouter(MemRestaurantReviews);
 

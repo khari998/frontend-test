@@ -6,7 +6,7 @@ In order to start this application in development mode, follow the following ste
 4. cd back to the root directory of this project and run `npm run dev` (if making a change to client, run the build command first)
 5. The latest production build should populate when nagivating to http://localhost:5000
 
-NOTE: This application relies on environmental variables. The secretes contained in these were in the gitignore file. However, for code testing and review purposes, they were committed to the current repository. 
+NOTE: This application relies on environmental variables. The secretes contained in these files are in the .gitignore
 
 This application is divided into Three sections built with the following technologies:
   Client
@@ -55,28 +55,24 @@ Conclusions
   This challenge was a very fun exercise. The more I paid attention to detail for what the specificaitons were looking for, the more I found myself working harder to ensure 
   those details were implemented. The state management and hidden edge cases were particularly interesting puzzles with so many connected components. I believe I was able to account
   for all hidden edge cases. I am very thankful I challenged myself to use redux for state management because it paid off in the end for productivity. 
-  It is also much tougher working with dependencies in TypeScript that were not optimized for it. This helped me face many new challenges I did not see coming.
   While I was eager to add more, I am very please with the final result of this project.
 
 Challenges/Difficulties
-  Most challenging errors came from integrating 3rd party packages with TypeScript and Redux
-    Enzyme would not recognize any components wrapped in Provider for testing
-    Errors setting up TypeScript config, TypeScript issues with webpack
-    Many issues using types for the React router and Redux packages with TypeScript
-    CSS minifies won't minify css -- Many webpack erros come from not having proper types for 3rd party libraries 
-    Because sending CSS to production build was difficult, I chose not to refactor to SASS
-    Storybook was not playing nice with any of my TypeScript files, I opted to test with Jest instead
   React-Apollo is bugged
     Recently React-Apollo switched to refactoring their code with React-Hooks which is giving me a 
     warning about a potential data leak. After researching this issue, a developer working on the Apollo team stated
     they were working on a fix
+  Redux ConnectedRouter types is bugged 
+    Child Route component created by reduct connected router does not require history object as this is depricated, however the Redux connected Router still requires this history object in it's typescript type properties. Without the redux router, the child App component cannot navigate backwards due to it being wrapped by a redux store. The @types for the ConnectedRouter needs to be updated so it does not need the history object in order for typescript to compile correctly
   Not able to develop mobile/flutter version
     I was aiming to also build a web-mobile/flutter version of this project however, I was not able to in time due to 
     debugging many issues. I will continue to add a mobile version to this repository if requested. 
-  Further Speed optimizations
-    Because I was working with a GraphQL server and a GraphQL endpoint, I could not figure out how to break the initial
-    Endpoint call into multiple calls in order to further reduce the information requested on the first page load. In testing
-    I was able to decrease latency by 1.0s, however I could not figure out how to make frontend requests to these specific queries
-    as the data was already received from the initial query. Potentially refactoring the server to use Express instead can remedy this,
-    however I did not want to spend too much time on this vs finishing the application.
+
+
+Further Speed optimizations
+  Because I was working with a GraphQL server and a GraphQL endpoint, I could not figure out how to break the initial
+  Endpoint call into multiple calls in order to further reduce the information requested on the first page load. In testing
+  I was able to decrease latency by 1.0s, however I could not figure out how to make frontend requests to these specific queries
+  as the data was already received from the initial query. Potentially refactoring the server to use Express instead can remedy this,
+  however I did not want to spend too much time on this vs finishing the application.
 
