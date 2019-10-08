@@ -8,7 +8,7 @@ In order to start this application in development mode, follow the following ste
 4. cd back to the root directory of this project and run `npm run dev` (if making a change to client, run the build command first)
 5. The latest production build should populate when nagivating to http://localhost:5000
 
-NOTE: This application relies on environmental variables. The secretes contained in these files are in the .gitignore
+NOTE: This application relies on environmental variables. Because the secretes contained in these files are in the .gitignore, details of these files will be emailed upon request.
 
 This application is divided into Three sections built with the following technologies:
   Client
