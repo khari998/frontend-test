@@ -1,5 +1,7 @@
 In order to start this application in development mode, follow the following steps:
 
+## Instructions 
+
 1. Run `npm install` in the root directory of this applicaiton. 
 2. cd into the client directory and run `npm install` once again.
 3. Navigate to the index.tsx in the client directory and change line 34 to devUri in order to switch to development mode where requests are made from the local host
@@ -27,7 +29,7 @@ Production builds are stored in the public/build directory
 In order to run tests on the client code, cd into the client and run 'npm run test'
 In order to build the application, cd into the client and run 'npm run build'
 
-Layout
+## Layout
   The Server connects to the Yelp GraphQL endpoint via the Express-GraphQL server
   The Client queries that data with React-Apollo 
     In the Client frontend code is located in the src directory within Client
@@ -40,7 +42,7 @@ Layout
     All of the components rendered can be found in the Components folder
     The models folder contains all mock data and classes that were used to model the API data
 
-Optimizations
+## Optimizations
 
   Client Side
   - Memoized functional components to improve performance and prevent unnecessary rerendering
@@ -51,13 +53,15 @@ Optimizations
   - Queried data with Apollo so that it is cached and multiple requests do not need to be made, allowing for faster client stateful manipulation of data as its not re-requested
   - Using GraphQL server and GraphQL Yelp endpoint in order to only request necessary information for the applicaiton
 
-Conclusions
+## Conclusions
+
   This challenge was a very fun exercise. The more I paid attention to detail for what the specificaitons were looking for, the more I found myself working harder to ensure 
   those details were implemented. The state management and hidden edge cases were particularly interesting puzzles with so many connected components. I believe I was able to account
   for all hidden edge cases. I am very thankful I challenged myself to use redux for state management because it paid off in the end for productivity. 
   While I was eager to add more, I am very please with the final result of this project.
 
-Challenges/Difficulties
+## Challenges/Difficulties
+
   React-Apollo is bugged
     Recently React-Apollo switched to refactoring their code with React-Hooks which is giving me a 
     warning about a potential data leak. After researching this issue, a developer working on the Apollo team stated
@@ -69,7 +73,8 @@ Challenges/Difficulties
     debugging many issues. I will continue to add a mobile version to this repository if requested. 
 
 
-Further Speed optimizations
+## Further Speed optimizations
+
   Because I was working with a GraphQL server and a GraphQL endpoint, I could not figure out how to break the initial
   Endpoint call into multiple calls in order to further reduce the information requested on the first page load. In testing
   I was able to decrease latency by 1.0s, however I could not figure out how to make frontend requests to these specific queries
